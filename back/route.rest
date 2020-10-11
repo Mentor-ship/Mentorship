@@ -1,0 +1,13 @@
+GET http://localhost:5000/students
+
+###
+GET http://localhost:5000/students/5f8325e955c62a2137409e2a
+
+###
+POST http://localhost:5000/students
+Content-Type: application/json
+
+{
+    "name": "Aru",
+    "surname": "Serikbayeva"
+}
