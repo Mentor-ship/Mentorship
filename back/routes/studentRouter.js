@@ -25,6 +25,8 @@ router.post('/', async (req, res) => {
   const student = new Student({
     name: req.body.name,
     surname: req.body.surname,
+    email: req.body.email,
+    phone: req.body.phone,
   });
 
   try {

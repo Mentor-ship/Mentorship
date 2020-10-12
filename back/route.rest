@@ -9,7 +9,9 @@ Content-Type: application/json
 
 {
     "name": "Aru",
-    "surname": "Serikbayeva"
+    "surname": "Serikbayeva",
+    "email": "1234",
+    "phone": "1234"
 }
 
 ###
@@ -77,4 +79,28 @@ Content-Type: application/json
 
 {
     "cv_id": "3228"
+}
+
+###
+POST http://localhost:5000/student_evaluation
+Content-Type: application/json
+
+{
+    "student_id": "3228",
+    "employer_id": "Knigga",
+    "rating": 10,
+    "description": "NaN"
+
+}
+
+###
+POST http://localhost:5000/vacancy_reviews
+Content-Type: application/json
+
+{
+    "student_id": "3228",
+    "vacancy_id": "Knigga",
+    "response": true,
+    "message": "Тупа сас"
+
 }
