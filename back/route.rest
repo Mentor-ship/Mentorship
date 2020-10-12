@@ -11,3 +11,70 @@ Content-Type: application/json
     "name": "Aru",
     "surname": "Serikbayeva"
 }
+
+###
+POST http://localhost:5000/vacancies
+Content-Type: application/json
+
+{
+    "vacancy_id": 1,
+    "employer_id": 1,
+    "name_of_vacancy": "Жмых",
+    "duty": "Жмышить",
+    "requirements": "Быть жмыхом"
+}
+
+###
+POST http://localhost:5000/cvs
+Content-Type: application/json
+
+{
+    "student_id": "loh",
+    "city": "NoName",
+    "gender": true,
+    "nationality": "Атакующий вертолет АПАЧ (гендер тут boolean - ставим парней на true)",
+    "education": "Бомж из помойки",
+    "work_experience": true
+
+}
+
+###
+POST http://localhost:5000/cv_reviews
+Content-Type: application/json
+
+{
+    "cv_id": "loh",
+    "employer_id": "3228",
+    "name": "Noname",
+    "surname": "Noname",
+    "email": "Бомж из помойки",
+    "phone": "88005553535"
+
+}
+
+###
+POST http://localhost:5000/employers
+Content-Type: application/json
+
+{
+    "vacancy_id": "3228",
+    "name": "Knigga",
+    "surname": "Noname",
+    "email": "NaN",
+    "phone": "88005553535",
+    "company_name": "ООО Зеленоглазое такси",
+    "industry": "Такси",
+    "bin": "123456789012",
+    "office_address": "Nigga",
+    "phone_office": "aggiN",
+    "company_description": "ALM"
+
+}
+
+###
+POST http://localhost:5000/additional_information
+Content-Type: application/json
+
+{
+    "cv_id": "3228"
+}
