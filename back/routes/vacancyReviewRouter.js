@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 });
 
 // GET ONE
-router.get('/:id', getVacancy_reveiw, (req, res) => {
+router.get('/:id', getVacancy_review, (req, res) => {
   res.send(res.vacancy_reviews);
 });
 
@@ -30,8 +30,8 @@ router.post('/', async (req, res) => {
   });
 
   try {
-    const newVacancy_reveiw = await vacancy_review.save();
-    res.status(200).json(newVacancy_reveiw);
+    const newVacancy_review = await vacancy_review.save();
+    res.status(200).json(newVacancy_review);
   } catch (error) {
     res.status(400).json({
       message: error.message,
@@ -39,7 +39,45 @@ router.post('/', async (req, res) => {
   }
 });
 
-async function getVacancy_reveiw(req, res, next) {
+//UPDATE ONE
+router.put('/:id', getVacancy_review, async (req, res) => {
+  if (req.body.student_id && req.body.student_id !== '') {
+    res.vacancy_review.student_id = req.body.student_id;
+  }
+  if (req.body.vacancy_id && req.body.vacancy_id !== '') {
+    res.vacancy_review.vacancy_id = req.body.vacancy_id;
+  }
+  if (req.body.response) {
+    res.vacancy_review.response = req.body.response;
+  }
+  if (req.body.message && req.body.message !== '') {
+    res.vacancy_review.message = req.body.message;
+  }
+  try {
+    const updatedVacancy_review = await res.vacancy_review.save();
+    res.json(updatedVacancy_review);
+  } catch (error) {
+    res.status(400).json({
+      message: error.message,
+    });
+  }
+});
+
+// DELETE ONE
+router.delete('/:id', getVacancy_review, async (req, res) => {
+  try {
+    await res.vacancy_review.remove();
+    res.status(200).json({
+      message: 'Vacancy review deleted',
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+});
+
+async function getVacancy_review(req, res, next) {
   let vacancy_reviews;
   try {
     vacancy_reviews = await Vacancy_reviews.findById(req.params.id);

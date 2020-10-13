@@ -47,6 +47,68 @@ router.post('/', async (req, res) => {
   }
 });
 
+//UPDATE ONE
+router.put('/:id', getEmployer, async (req, res) => {
+  if (req.body.vacancy_id && req.body.vacancy_id !== '') {
+    res.employer.vacancy_id = req.body.vacancy_id;
+  }
+  if (req.body.name && req.body.name !== '') {
+    res.employer.name = req.body.name;
+  }
+  if (req.body.surname && req.body.surname !== '') {
+    res.employer.surname = req.body.surname;
+  }
+  if (req.body.email && req.body.email !== '') {
+    res.employer.email = req.body.email;
+  }
+  if (req.body.phone && req.body.phone !== '') {
+    res.employer.phone = req.body.phone;
+  }
+  if (req.body.company_name && req.body.company_name !== '') {
+    res.employer.company_name = req.body.company_name;
+  }
+  if (req.body.industry && req.body.industry !== '') {
+    res.employer.industry = req.body.industry;
+  }
+  if (req.body.num_of_employees && req.body.num_of_employees !== '') {
+    res.employer.num_of_employees = req.body.num_of_employees;
+  }
+  if (req.body.office_address && req.body.office_address !== '') {
+    res.employer.office_address = req.body.office_address;
+  }
+  if (req.body.phone_office && req.body.phone_office !== '') {
+    res.employer.phone_office = req.body.phone_office;
+  }
+  if (req.body.company_description && req.body.company_description !== '') {
+    res.employer.company_description = req.body.company_description;
+  }
+  if (req.body.logo && req.body.logo !== '') {
+    res.employer.logo = req.body.logo;
+  }
+  try {
+    const updatedEmployer = await res.employer.save();
+    res.json(updatedEmployer);
+  } catch (error) {
+    res.status(400).json({
+      message: error.message,
+    });
+  }
+});
+
+// DELETE ONE
+router.delete('/:id', getEmployer, async (req, res) => {
+  try {
+    await res.employer.remove();
+    res.status(200).json({
+      message: 'Employer deleted',
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+});
+
 async function getEmployer(req, res, next) {
   let employer;
   try {

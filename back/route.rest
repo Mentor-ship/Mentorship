@@ -1,30 +1,60 @@
 GET http://localhost:5000/students
 
 ###
-GET http://localhost:5000/students/5f8325e955c62a2137409e2a
+GET http://localhost:5000/students/5f84b7da696ee51c84c3ebc6
 
 ###
 POST http://localhost:5000/students
 Content-Type: application/json
 
 {
-    "name": "Aru",
+    "name": "Aruzhan",
     "surname": "Serikbayeva",
     "email": "1234",
     "phone": "1234"
 }
+
+### 
+PUT http://localhost:5000/students/5f84d4691a002c3184d9667b 
+Content-Type: application/json
+
+{
+    "name": "Somebody",
+    "surname": "Somebody",
+    "email": "somebody@gmail.com",
+    "phone": "87783120332"
+}
+
+### 
+DELETE http://localhost:5000/students/5f84b7da696ee51c84c3ebc6
 
 ###
 POST http://localhost:5000/vacancies
 Content-Type: application/json
 
 {
-    "vacancy_id": 1,
-    "employer_id": 1,
+    "vacancy_id": 2,
+    "employer_id": 2,
     "name_of_vacancy": "Жмых",
     "duty": "Жмышить",
     "requirements": "Быть жмыхом"
 }
+
+### 
+PUT http://localhost:5000/vacancies/5f84e3ca40ecb925a8507c80
+Content-Type: application/json
+
+{
+    "vacancy_id": 3,
+    "employer_id": 3,
+    "name_of_vacancy": "Хряк",
+    "duty": "Хрякать",
+    "requirements": "Быть хряком"
+}
+
+### 
+DELETE http://localhost:5000/vacancies/5f84e3ca40ecb925a8507c80
+
 
 ###
 POST http://localhost:5000/cvs
@@ -37,8 +67,23 @@ Content-Type: application/json
     "nationality": "Атакующий вертолет АПАЧ (гендер тут boolean - ставим парней на true)",
     "education": "Бомж из помойки",
     "work_experience": true
-
 }
+
+### 
+PUT http://localhost:5000/cvs/5f84e8b1edff7d0a5ce2fe1e
+Content-Type: application/json
+
+{
+    "student_id": "sam loh",
+    "city": "Krg",
+    "gender": false,
+    "nationality": "Сейчас бы поспать",
+    "education": "Каскадер",
+    "work_experience": false
+}
+
+### 
+DELETE http://localhost:5000/cvs/5f84e8b1edff7d0a5ce2fe1e
 
 ###
 POST http://localhost:5000/cv_reviews
@@ -53,6 +98,22 @@ Content-Type: application/json
     "phone": "88005553535"
 
 }
+
+### 
+PUT http://localhost:5000/cv_reviews/5f84e9e52fae384ea0b05943
+Content-Type: application/json
+
+{
+    "cv_id": "net",
+    "employer_id": "0000",
+    "name": "A",
+    "surname": "A",
+    "email": "A",
+    "phone": "88005553535"
+}
+
+### 
+DELETE http://localhost:5000/cv_reviews/5f84e9e52fae384ea0b05943
 
 ###
 POST http://localhost:5000/employers
@@ -73,6 +134,27 @@ Content-Type: application/json
 
 }
 
+### 
+PUT http://localhost:5000/employers/5f84e66833adfa49c09f2985
+Content-Type: application/json
+
+{
+    "vacancy_id": "9999",
+    "name": "Van",
+    "surname": "Gogh",
+    "email": "vanGogh@gmail.com",
+    "phone": "8990974635",
+    "company_name": "Art",
+    "industry": "Art",
+    "bin": "12345678910",
+    "office_address": "Here",
+    "phone_office": "I",
+    "company_description": "am"
+}
+
+### 
+DELETE http://localhost:5000/employers/5f84e66833adfa49c09f2985
+
 ###
 POST http://localhost:5000/additional_information
 Content-Type: application/json
@@ -80,6 +162,17 @@ Content-Type: application/json
 {
     "cv_id": "3228"
 }
+
+### 
+PUT http://localhost:5000/additional_information/5f84ec579cca7f4484c0df7d
+Content-Type: application/json
+
+{
+    "cv_id": "787898"
+}
+
+### 
+DELETE http://localhost:5000/additional_information/5f84ec579cca7f4484c0df7d
 
 ###
 POST http://localhost:5000/student_evaluation
@@ -94,6 +187,23 @@ Content-Type: application/json
 }
 
 ###
+GET http://localhost:5000/student_evaluation/5f84d9ac1a002c3184d9667c
+
+### 
+PUT http://localhost:5000/student_evaluation/5f84d9ac1a002c3184d9667c 
+Content-Type: application/json
+
+{
+    "student_id": "5555",
+    "employer_id": "6666",
+    "rating": 15,
+    "description": "sam loh"
+}
+
+### 
+DELETE http://localhost:5000/student_evaluation/5f84d9ac1a002c3184d9667c
+
+###
 POST http://localhost:5000/vacancy_reviews
 Content-Type: application/json
 
@@ -104,3 +214,20 @@ Content-Type: application/json
     "message": "Тупа сас"
 
 }
+
+###
+GET http://localhost:5000/vacancy_reviews/5f84ed8958b40f263c912d12
+
+### 
+PUT http://localhost:5000/vacancy_reviews/5f84edea0e802a2818e65a10
+Content-Type: application/json
+
+{
+    "student_id": "Adil",
+    "vacancy_id": "Aliva",
+    "response": true,
+    "message": "Madik"
+}
+
+### 
+DELETE http://localhost:5000/vacancy_reviews/5f84df7a7e1e1545244e10e8
