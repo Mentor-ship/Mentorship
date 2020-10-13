@@ -37,7 +37,8 @@ Content-Type: application/json
     "employer_id": 2,
     "name_of_vacancy": "Жмых",
     "duty": "Жмышить",
-    "requirements": "Быть жмыхом"
+    "requirements": "Быть жмыхом",
+    "salary": 37283742
 }
 
 ### 
@@ -49,7 +50,8 @@ Content-Type: application/json
     "employer_id": 3,
     "name_of_vacancy": "Хряк",
     "duty": "Хрякать",
-    "requirements": "Быть хряком"
+    "requirements": "Быть хряком",
+    "salary": 389538492
 }
 
 ### 

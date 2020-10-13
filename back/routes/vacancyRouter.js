@@ -28,6 +28,7 @@ router.post('/', async (req, res) => {
     name_of_vacancy: req.body.name_of_vacancy,
     duty: req.body.duty,
     requirements: req.body.requirements,
+    salary: req.body.salary,
   });
 
   try {
@@ -56,6 +57,9 @@ router.put('/:id', getVacancy, async (req, res) => {
   }
   if (req.body.requirements && req.body.requirements !== '') {
     res.vacancy.requirements = req.body.requirements;
+  }
+  if (req.body.salary) {
+    res.vacancy.salary = req.body.salary;
   }
   try {
     const updatedVacancy = await res.vacancy.save();
