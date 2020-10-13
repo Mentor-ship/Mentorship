@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 
-const studentSchema = new mongoose.Schema({
+const cvReviewSchema = new mongoose.Schema({
+  cv_id: {
+    type: String,
+    required: true,
+  },
+  employer_id: {
+    type: String,
+    required: true,
+  },
   name: {
     type: String,
     required: true,
@@ -19,4 +27,4 @@ const studentSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model('Student', studentSchema);
+module.exports = mongoose.model('CV_review', cvReviewSchema);
