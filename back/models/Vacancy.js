@@ -23,6 +23,18 @@ const vacancySchema = new mongoose.Schema({
     required: true,
   },
   salary: Number,
+  country: {
+    type: String,
+    required: true,
+  },
+  city: {
+    type: String,
+    required: true,
+  },
+  experience: {
+    type: Number,
+    required: true,
+  },
 });
 
 module.exports = mongoose.model('Vacancy', vacancySchema);

@@ -29,6 +29,9 @@ router.post('/', async (req, res) => {
     duty: req.body.duty,
     requirements: req.body.requirements,
     salary: req.body.salary,
+    country: req.body.country,
+    city: req.body.city,
+    experience: req.body.experience,
   });
 
   try {
@@ -60,6 +63,15 @@ router.put('/:id', getVacancy, async (req, res) => {
   }
   if (req.body.salary) {
     res.vacancy.salary = req.body.salary;
+  }
+  if (req.body.country && req.body.country !== '') {
+    res.vacancy.country = req.body.country;
+  }
+  if (req.body.city && req.body.city !== '') {
+    res.vacancy.city = req.body.city;
+  }
+  if (req.body.experience && req.body.experience !== '') {
+    res.vacancy.experience = req.body.experience;
   }
   try {
     const updatedVacancy = await res.vacancy.save();

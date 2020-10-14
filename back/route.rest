@@ -33,29 +33,35 @@ POST http://localhost:5000/vacancies
 Content-Type: application/json
 
 {
-    "vacancy_id": 2,
-    "employer_id": 2,
+    "vacancy_id": 5,
+    "employer_id": 3,
     "name_of_vacancy": "Жмых",
     "duty": "Жмышить",
     "requirements": "Быть жмыхом",
-    "salary": 37283742
+    "salary": 37283742,
+    "country": "Kazakhstan",
+    "city": "Лаленбург",
+    "experience": 1
 }
 
 ### 
-PUT http://localhost:5000/vacancies/5f84e3ca40ecb925a8507c80
+PUT http://localhost:5000/vacancies/5f87169d47a81137a0291e6f
 Content-Type: application/json
 
 {
-    "vacancy_id": 3,
+    "vacancy_id": 6,
     "employer_id": 3,
     "name_of_vacancy": "Хряк",
     "duty": "Хрякать",
     "requirements": "Быть хряком",
-    "salary": 389538492
+    "salary": 389538492,
+    "country": "Russian",
+    "city": "Дерри",
+    "experience": 2
 }
 
 ### 
-DELETE http://localhost:5000/vacancies/5f84e3ca40ecb925a8507c80
+DELETE http://localhost:5000/vacancies/5f87169d47a81137a0291e6f
 
 
 ###
