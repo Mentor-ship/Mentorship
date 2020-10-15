@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
 
 // GET ONE
 router.get('/:id', getVacancy_review, (req, res) => {
-  res.send(res.vacancy_reviews);
+  res.send(res.vacancy_review);
 });
 
 //POST ONE
@@ -78,16 +78,16 @@ router.delete('/:id', getVacancy_review, async (req, res) => {
 });
 
 async function getVacancy_review(req, res, next) {
-  let vacancy_reviews;
+  let vacancy_review;
   try {
-    vacancy_reviews = await Vacancy_reviews.findById(req.params.id);
+    vacancy_review = await Vacancy_review.findById(req.params.id);
   } catch (error) {
     return res.json({
       message: error.message,
     });
   }
 
-  res.vacancy_reviews = vacancy_reviews;
+  res.vacancy_review = vacancy_review;
   next();
 }
 
