@@ -24,6 +24,9 @@ app.get('/', (req, res) => {
   });
 });
 
+const student = require('./routes/student');
+app.use('/student', student);
+
 const studentRouter = require('./routes/studentRouter');
 app.use('/students', studentRouter);
 
