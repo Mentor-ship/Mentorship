@@ -13,4 +13,4 @@ const vacancyReviewSchema = new mongoose.Schema({
   message: String,
 });
 
-module.exports = mongoose.model('Vacancy review', vacancyReviewSchema);
+module.exports = mongoose.model('Vacancy_review', vacancyReviewSchema);

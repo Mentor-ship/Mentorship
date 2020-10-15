@@ -224,10 +224,10 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:5000/vacancy_reviews/5f84ed8958b40f263c912d12
+GET http://localhost:5000/vacancy_reviews/5f88bc69ada4996ddc834f81
 
 ### 
-PUT http://localhost:5000/vacancy_reviews/5f84edea0e802a2818e65a10
+PUT http://localhost:5000/vacancy_reviews/5f88bc69ada4996ddc834f81
 Content-Type: application/json
 
 {
@@ -238,4 +238,4 @@ Content-Type: application/json
 }
 
 ### 
-DELETE http://localhost:5000/vacancy_reviews/5f84df7a7e1e1545244e10e8
+DELETE http://localhost:5000/vacancy_reviews/5f88bc69ada4996ddc834f81
