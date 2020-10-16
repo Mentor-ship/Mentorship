@@ -51,6 +51,9 @@ app.use('/cv_reviews', cvReviewRouter);
 const additionalRouter = require('./routes/additionalRouter');
 app.use('/additional_information', additionalRouter);
 
+const employerAndVacancy = require('./routes/employerAndVacancy');
+app.use('/employer_and_vacancies', employerAndVacancy);
+
 app.listen(5000, () => {
   console.log('Server is listening on port 5000');
 });
