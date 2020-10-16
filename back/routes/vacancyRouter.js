@@ -109,7 +109,7 @@ router.post('/getCompanyName', async (req, res) => {
       });
     }
     if (!employer) res.json({ message: 'There is no such employer' });
-    res.send(employer.company_name);
+    res.json({employer.company_name});
   } else {
     res.status(400).json({ message: 'You forgot employer_id' });
   }
