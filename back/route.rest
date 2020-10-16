@@ -74,3 +74,15 @@ Content-Type: application/json
 
 ### 
 DELETE http://localhost:5000/employer_and_vacancies/5f892aa5d6b5f440b8c8184a
+
+
+###
+GET http://localhost:5000/employers
+
+###
+POST http://localhost:5000/vacancies/getCompanyName
+Content-Type: application/json
+
+{
+    "employer_id": "5f84a0875db2425a254ddfc1"
+}
