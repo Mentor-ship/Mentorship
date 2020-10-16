@@ -6,7 +6,7 @@ module.exports = function (req, res, next) {
 
   try {
     const decoded = jwt.verify(token, 'randomString');
-    req.student = decoded.student;
+    req.user = decoded.user;
     next();
   } catch (e) {
     console.error(e);

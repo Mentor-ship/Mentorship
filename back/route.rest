@@ -29,19 +29,18 @@ Content-Type: application/json
 DELETE http://localhost:5000/students/5f84b7da696ee51c84c3ebc6
 
 ###
-POST http://localhost:5000/student/signup
+POST http://localhost:5000/user/signup
 Content-Type: application/json
 
 {
-   "name": "Adil",
-   "surname": "Akhmetov",
+   "username": "qwerrty000",
    "email": "helloworld@gmail.com",
    "phone": "87783120333",
    "password": "iloveanime"
 }
 
 ###
-POST http://localhost:5000/student/login
+POST http://localhost:5000/user/login
 Content-Type: application/json
 
 {
