@@ -24,7 +24,6 @@ router.get('/:id', getVacancy, (req, res) => {
 //POST ONE
 router.post('/', async (req, res) => {
   const vacancy = new Vacancy({
-    vacancy_id: req.body.vacancy_id,
     employer_id: req.body.employer_id,
     name_of_vacancy: req.body.name_of_vacancy,
     duty: req.body.duty,
@@ -47,9 +46,6 @@ router.post('/', async (req, res) => {
 
 //UPDATE ONE
 router.put('/:id', getVacancy, async (req, res) => {
-  if (req.body.vacancy_id && req.body.vacancy_id !== '') {
-    res.vacancy.vacancy_id = req.body.vacancy_id;
-  }
   if (req.body.employer_id && req.body.employer_id !== '') {
     res.vacancy.employer_id = req.body.employer_id;
   }

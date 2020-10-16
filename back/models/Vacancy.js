@@ -1,13 +1,8 @@
 const mongoose = require('mongoose');
 
 const vacancySchema = new mongoose.Schema({
-  vacancy_id: {
-    type: Number,
-    required: true,
-    unique: true,
-  },
   employer_id: {
-    type: Number,
+    type: String,
     required: true,
   },
   name_of_vacancy: {
