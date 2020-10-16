@@ -23,7 +23,7 @@ router.get('/:id', getEmployer, (req, res) => {
 //POST ONE
 router.post('/', async (req, res) => {
   const employer = new Employer({
-    vacancy_id: req.body.vacancy_id,
+    employer_id: req.body.employer_id,
     name: req.body.name,
     surname: req.body.surname,
     email: req.body.email,
@@ -49,8 +49,8 @@ router.post('/', async (req, res) => {
 
 //UPDATE ONE
 router.put('/:id', getEmployer, async (req, res) => {
-  if (req.body.vacancy_id && req.body.vacancy_id !== '') {
-    res.employer.vacancy_id = req.body.vacancy_id;
+  if (req.body.employer_id && req.body.employer_id !== '') {
+    res.employer.employer_id = req.body.employer_id;
   }
   if (req.body.name && req.body.name !== '') {
     res.employer.name = req.body.name;
