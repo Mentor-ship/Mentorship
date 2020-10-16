@@ -34,9 +34,13 @@ Content-Type: application/json
 
 {
    "username": "qwerrty000",
-   "email": "helloworld@gmail.com",
-   "phone": "87783120333",
-   "password": "iloveanime"
+   "email": "helloworld1@gmail.com",
+   "phone_number": "+7783120333",
+   "password": "iloveanime",
+   "first_name": "Madiyar",
+   "last_name": "Mukushev",
+   "country": "Kazakhstan",
+   "city": "Pavlodar"
 }
 
 ###
@@ -44,7 +48,7 @@ POST http://localhost:5000/user/login
 Content-Type: application/json
 
 {
-   "email": "helloworld@gmail.com",
+   "email": "helloworld2@gmail.com",
    "password": "iloveanime"
 }
 
