@@ -34,9 +34,13 @@ Content-Type: application/json
 
 {
    "username": "qwerrty000",
-   "email": "helloworld@gmail.com",
-   "phone": "87783120333",
-   "password": "iloveanime"
+   "email": "helloworld1@gmail.com",
+   "phone_number": "+7783120333",
+   "password": "iloveanime",
+   "first_name": "Madiyar",
+   "last_name": "Mukushev",
+   "country": "Kazakhstan",
+   "city": "Pavlodar"
 }
 
 ###
@@ -44,7 +48,7 @@ POST http://localhost:5000/user/login
 Content-Type: application/json
 
 {
-   "email": "helloworld@gmail.com",
+   "email": "helloworld2@gmail.com",
    "password": "iloveanime"
 }
 
@@ -70,3 +74,15 @@ Content-Type: application/json
 
 ### 
 DELETE http://localhost:5000/employer_and_vacancies/5f892aa5d6b5f440b8c8184a
+
+
+###
+GET http://localhost:5000/employers
+
+###
+POST http://localhost:5000/vacancies/getCompanyName
+Content-Type: application/json
+
+{
+    "employer_id": "5f84a0875db2425a254ddfc1"
+}

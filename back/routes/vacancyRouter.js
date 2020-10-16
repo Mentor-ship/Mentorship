@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Vacancy = require('../models/Vacancy');
+const Employer = require('../models/Employer');
 
 // GET ALL
 router.get('/', async (req, res) => {
@@ -23,7 +24,6 @@ router.get('/:id', getVacancy, (req, res) => {
 //POST ONE
 router.post('/', async (req, res) => {
   const vacancy = new Vacancy({
-    vacancy_id: req.body.vacancy_id,
     employer_id: req.body.employer_id,
     name_of_vacancy: req.body.name_of_vacancy,
     duty: req.body.duty,
@@ -46,9 +46,6 @@ router.post('/', async (req, res) => {
 
 //UPDATE ONE
 router.put('/:id', getVacancy, async (req, res) => {
-  if (req.body.vacancy_id && req.body.vacancy_id !== '') {
-    res.vacancy.vacancy_id = req.body.vacancy_id;
-  }
   if (req.body.employer_id && req.body.employer_id !== '') {
     res.vacancy.employer_id = req.body.employer_id;
   }
@@ -94,6 +91,27 @@ router.delete('/:id', getVacancy, async (req, res) => {
     res.status(500).json({
       message: error.message,
     });
+  }
+});
+
+// POST method getCompanyName
+// TODO: move it to another route
+router.post('/getCompanyName', async (req, res) => {
+  if (req.body.employer_id) {
+    let employer;
+    try {
+      employer = await Employer.findOne({
+        _id: req.body.employer_id,
+      });
+    } catch (error) {
+      return res.json({
+        message: error.message,
+      });
+    }
+    if (!employer) res.json({ message: 'There is no such employer' });
+    res.send(employer.company_name);
+  } else {
+    res.status(400).json({ message: 'You forgot employer_id' });
   }
 });
 

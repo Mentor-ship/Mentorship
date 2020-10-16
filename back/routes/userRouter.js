@@ -18,7 +18,7 @@ router.post(
   [
     check('username', 'Please Enter a Valid Name').not().isEmpty(),
     check('email', 'Please enter a valid email').isEmail(),
-    check('phone', 'Please enter a valid phone').not().isEmpty(),
+    check('phone_number', 'Please enter a valid phone').not().isEmpty(),
     check('password', 'Please enter a valid password').isLength({
       min: 6,
     }),
@@ -30,8 +30,7 @@ router.post(
         errors: errors.array(),
       });
     }
-
-    const { username, email, phone, password } = req.body;
+    const { username, email, password, phone_number, first_name, last_name, country, city } = req.body;
     try {
       let user = await User.findOne({
         email,
@@ -45,8 +44,12 @@ router.post(
       user = new User({
         username,
         email,
-        phone,
+        phone_number,
         password,
+        first_name,
+        last_name,
+        country,
+        city,
       });
 
       const salt = await bcrypt.genSalt(10);
@@ -75,7 +78,7 @@ router.post(
       );
     } catch (err) {
       console.log(err.message);
-      res.status(500).send('Error in Saving');
+      res.status(500).json({ message: err.message });
     }
   },
 );
