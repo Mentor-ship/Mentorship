@@ -27,8 +27,6 @@ router.post('/', async (req, res) => {
     surname: req.body.surname,
     email: req.body.email,
     phone: req.body.phone,
-    password: req.body.password,
-    createdAt: req.body.createdAt,
   });
 
   try {
@@ -54,12 +52,6 @@ router.put('/:id', getStudent, async (req, res) => {
   }
   if (req.body.phone && req.body.phone !== '') {
     res.student.phone = req.body.phone;
-  }
-  if (req.body.password && req.body.password !== '') {
-    res.student.password = req.body.password;
-  }
-  if (req.body.createdAt && req.body.createdAt !== '') {
-    res.student.createdAt = req.body.createdAt;
   }
   try {
     const updatedStudent = await res.student.save();

@@ -5,19 +5,18 @@ const jwt = require('jsonwebtoken');
 const router = express.Router();
 const auth = require('../middleware/auth');
 
-const Student = require('../models/Student');
+const User = require('../models/User');
 
 /**
  * @method - POST
  * @param - /signup
- * @description - Student SignUp
+ * @description - User SignUp
  */
 
 router.post(
   '/signup',
   [
-    check('name', 'Please Enter a Valid Name').not().isEmpty(),
-    check('surname', 'Please Enter a Valid Surname').not().isEmpty(),
+    check('username', 'Please Enter a Valid Name').not().isEmpty(),
     check('email', 'Please enter a valid email').isEmail(),
     check('phone', 'Please enter a valid phone').not().isEmpty(),
     check('password', 'Please enter a valid password').isLength({
@@ -32,33 +31,32 @@ router.post(
       });
     }
 
-    const { name, surname, email, phone, password } = req.body;
+    const { username, email, phone, password } = req.body;
     try {
-      let student = await Student.findOne({
+      let user = await User.findOne({
         email,
       });
-      if (student) {
+      if (user) {
         return res.status(400).json({
-          msg: 'Student Already Exists',
+          msg: 'User Already Exists',
         });
       }
 
-      student = new Student({
-        name,
-        surname,
+      user = new User({
+        username,
         email,
         phone,
         password,
       });
 
       const salt = await bcrypt.genSalt(10);
-      student.password = await bcrypt.hash(password, salt);
+      user.password = await bcrypt.hash(password, salt);
 
-      await student.save();
+      await user.save();
 
       const payload = {
-        student: {
-          id: student.id,
+        user: {
+          id: user.id,
         },
       };
 
@@ -101,23 +99,23 @@ router.post(
 
     const { email, password } = req.body;
     try {
-      let student = await Student.findOne({
+      let user = await User.findOne({
         email,
       });
-      if (!student)
+      if (!user)
         return res.status(400).json({
-          message: 'Student Not Exist',
+          message: 'User Not Exist',
         });
 
-      const isMatch = await bcrypt.compare(password, student.password);
+      const isMatch = await bcrypt.compare(password, user.password);
       if (!isMatch)
         return res.status(400).json({
           message: 'Incorrect Password !',
         });
 
       const payload = {
-        student: {
-          id: student.id,
+        user: {
+          id: user.id,
         },
       };
 
@@ -145,19 +143,19 @@ router.post(
 
 /**
  * @method - POST
- * @description - Get LoggedIn Student
- * @param - /student/me
+ * @description - Get LoggedIn User
+ * @param - /user/me
  */
 
 router.get('/me', auth, async (req, res) => {
-  let student;
+  let user;
   try {
-    // request.student is getting fetched from Middleware after token authentication
-    student = await Student.findById(req.student.id);
+    // request.user is getting fetched from Middleware after token authentication
+    user = await User.findById(req.user.id);
   } catch (error) {
     res.send({ message: error.message });
   }
-  res.json(student);
+  res.json(user);
 });
 
 module.exports = router;
