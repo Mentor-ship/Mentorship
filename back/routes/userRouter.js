@@ -165,4 +165,29 @@ router.get('/me', auth, async (req, res) => {
   res.json(user);
 });
 
+// POST to check whether email is registered.
+// TODO: Write better documentation
+router.post('/checkMail', async (req, res) => {
+  try {
+    let user = await User.findOne({
+      email: req.body.email,
+    });
+    if (user) {
+      res.status(200).json({
+        isRegistered: true,
+        message: 'User already exists',
+      });
+    } else {
+      res.status(200).json({
+        isRegistered: false,
+        message: 'Email is free',
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+});
+
 module.exports = router;

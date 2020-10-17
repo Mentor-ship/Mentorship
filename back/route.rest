@@ -77,7 +77,8 @@ DELETE http://localhost:5000/employer_and_vacancies/5f892aa5d6b5f440b8c8184a
 
 
 ###
-GET http://localhost:5000/employers
+GET http://localhost:5000/user/me
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY4YWEzYTYwYWViNGYwMjY4NDgxZjI5In0sImlhdCI6MTYwMjkyNjc1MSwiZXhwIjoxNjAyOTMwMzUxfQ.UXKBw3hRLLkA2-1OegTfk1PfPyTp4RMb0b2fU3GtsPI
 
 ###
 POST http://localhost:5000/vacancies/getCompanyName
@@ -85,4 +86,12 @@ Content-Type: application/json
 
 {
     "employer_id": "5f84a0875db2425a254ddfc1"
+}
+
+###
+POST http://localhost:5000/user/checkMail
+Content-Type: application/json
+
+{
+    "email": "helloworld2@gmail.com"
 }
