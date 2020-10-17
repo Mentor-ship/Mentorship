@@ -73,6 +73,8 @@ router.post(
           if (err) throw err;
           res.status(200).json({
             token,
+            user,
+            message: 'User added successfully',
           });
         },
       );
@@ -132,13 +134,15 @@ router.post(
           if (err) throw err;
           res.status(200).json({
             token,
+            user,
+            message: 'Logged in successfully',
           });
         },
       );
     } catch (e) {
       console.error(e);
       res.status(500).json({
-        message: 'Server Error',
+        message: e.message,
       });
     }
   },
