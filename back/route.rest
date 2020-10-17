@@ -34,7 +34,7 @@ Content-Type: application/json
 
 {
    "username": "qwerrty000",
-   "email": "helloworld1@gmail.com",
+   "email": "helloworld3@gmail.com",
    "phone_number": "+7783120333",
    "password": "iloveanime",
    "first_name": "Madiyar",
