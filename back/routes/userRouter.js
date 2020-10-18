@@ -20,7 +20,7 @@ router.post(
     check('email', 'Please enter a valid email').isEmail(),
     check('phone_number', 'Please enter a valid phone').not().isEmpty(),
     check('password', 'Please enter a valid password').isLength({
-      min: 6,
+      min: 1,
     }),
   ],
   async (req, res) => {
@@ -90,7 +90,7 @@ router.post(
   [
     check('email', 'Please enter a valid email').isEmail(),
     check('password', 'Please enter a valid password').isLength({
-      min: 6,
+      min: 1,
     }),
   ],
   async (req, res) => {
