@@ -1,8 +1,14 @@
 {
     "version": 2,
     "functions": {
-        "api/app.ts": {
+        "dist/app.js": {
             "runtime": "@now/node@1.6.1"
         }
-    }
+    },
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "app.ts"
+        }
+    ]
 }
