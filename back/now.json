@@ -2,7 +2,7 @@
     "version": 2,
     "functions": {
         "api/api.ts": {
-            "runtime": "node"
+            "runtime": "@verlel/node@12.0.0"
         }
     }
 }
