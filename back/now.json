@@ -1,8 +1,9 @@
 {
     "version": 2,
     "functions": {
-        "api/api.ts": {
-            "runtime": "node@12.0.0"
+        "api/app.ts": {
+            "memory": 3008,
+            "maxDuration": 60
         }
     }
 }
