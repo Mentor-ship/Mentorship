@@ -1,7 +1,7 @@
 {
     "version": 2,
     "functions": {
-        "index.js": {
+        "app.js": {
             "runtime": "@now/node@1.6.1"
         }
     },
