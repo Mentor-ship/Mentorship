@@ -1,9 +1,14 @@
 {
     "version": 2,
     "functions": {
-        "./api/app.ts": {
-            "memory": 1024,
-            "maxDuration": 60
+        "index.js": {
+            "runtime": "@now/node@1.6.1"
         }
-    }
+    },
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "app.ts"
+        }
+    ]
 }
