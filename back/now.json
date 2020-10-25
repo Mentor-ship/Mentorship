@@ -2,7 +2,7 @@
     "version": 2,
     "functions": {
         "api/api.ts": {
-            "runtime": "@now/node-server"
+            "runtime": "vercel-node"
         }
     }
 }
