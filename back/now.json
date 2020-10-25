@@ -1,15 +1,8 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "src/app.ts",
-            "use": "@now/node-server"
+    "functions": {
+        "api/api.ts": {
+            "runtime": "@now/node-server"
         }
-    ],
-    "routes": [
-        {
-            "src": "dist/.*",
-            "dest": "app.js"
-        }
-    ]
+    }
 }
