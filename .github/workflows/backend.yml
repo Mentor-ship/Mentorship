@@ -10,8 +10,6 @@ jobs:
       strategy:
         matrix:
           node-version: [8.x, 10.x, 12.x]
-     
-      working-directory: 'back'
   
       steps:
       - uses: actions/checkout@v2
