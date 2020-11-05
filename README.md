@@ -1,6 +1,13 @@
 <details>
 <summary>Sitemap</summary>
 
-![](/docs/MentorshipBlueprint.drawio.svg)
+![](/docs/MentorshipSitemap.drawio.svg)
+
+</details>
+
+<details>
+<summary>Wireframes</summary>
+
+![](/docs/MentorshipWireframes.drawio.svg)
 
 </details>
