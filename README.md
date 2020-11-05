@@ -11,3 +11,10 @@
 ![](/docs/MentorshipWireframes.drawio.svg)
 
 </details>
+
+<details>
+<summary>Database</summary>
+
+![](/docs/MentorshipDatabase.drawio.svg)
+
+</details>
