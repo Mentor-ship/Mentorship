@@ -1,5 +1,5 @@
 {
     "ignoredFiles": [
-        "docs/*.drawio.svg"
+        "*.drawio.svg"
     ]
 }
