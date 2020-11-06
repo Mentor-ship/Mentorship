@@ -1,22 +1,22 @@
-<a href="https://nikibrian2001.wixsite.com/startup"><img src="docs/logo.svg" align="right" alt="Mentorship"/></a>
+<a href=""><img src="docs/img/logo.svg" align="right" alt="Mentorship"/></a>
 
 <details>
 <summary>Sitemap</summary>
 
-![](/docs/MentorshipSitemap.drawio.svg)
+![](/docs/drawio/MentorshipSitemap.drawio.svg)
 
 </details>
 
 <details>
 <summary>Wireframes</summary>
 
-![](/docs/MentorshipWireframes.drawio.svg)
+![](/docs/drawio/MentorshipWireframes.drawio.svg)
 
 </details>
 
 <details>
 <summary>Database</summary>
 
-![](/docs/MentorshipDatabase.drawio.svg)
+![](/docs/drawio/MentorshipDatabase.drawio.svg)
 
 </details>
