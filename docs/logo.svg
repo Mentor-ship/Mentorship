@@ -1,7 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="186" height="105" viewBox="0 0 186 105">
-  <g id="Group_1" data-name="Group 1" transform="translate(-308 -152)">
-    <rect id="Rectangle_1" data-name="Rectangle 1" width="186" height="105" rx="8" transform="translate(308 152)"/>
-    <text id="Mentorship" transform="translate(338 210)" fill="#fff" font-size="20" font-family="Lato-Black, Lato" font-weight="800"><tspan x="0" y="0">Mentorship</tspan></text>
-    <text id="created_by_StartUP_team" data-name="created by StartUP team" transform="translate(392 218)" fill="#fff" font-size="4" font-family="Lato-Black, Lato" font-weight="800"><tspan x="0" y="0">created by StartUP team</tspan></text>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="186" height="105" viewBox="0 0 186 105"><g id="Group_1" data-name="Group 1" transform="translate(-308 -152)"><rect id="Rectangle_1" width="186" height="105" data-name="Rectangle 1" rx="8" transform="translate(308 152)"/><text id="Mentorship" fill="#fff" font-family="Lato-Black, Lato" font-size="20" font-weight="800" transform="translate(338 210)"><tspan x="0" y="0">Mentorship</tspan></text><text id="created_by_StartUP_team" fill="#fff" data-name="created by StartUP team" font-family="Lato-Black, Lato" font-size="4" font-weight="800" transform="translate(392 218)"><tspan x="0" y="0">created by StartUP team</tspan></text></g></svg>
