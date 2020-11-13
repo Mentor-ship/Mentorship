@@ -12,9 +12,9 @@ else
   
   if [ result ]; then
   # Proceed with build
-    echo 1;
+    exit 1;
   else
   # Don't build
-    echo 0;
+    exit 0;
   fi
 fi
