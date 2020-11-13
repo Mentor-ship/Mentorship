@@ -59,7 +59,7 @@ Content-Type: application/json
 
 {
     "employer_id": "5666",
-    "vacancy_id": "38483"
+    "vacancy_id": "3843"
 
 }
 
