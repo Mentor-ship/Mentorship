@@ -1,0 +1,51 @@
+_id: spc_54f34525ed9f4fee9b8d7797e8d1b09f
+type: ApiSpec
+parentId: wrk_3dd3d75737e34464b7c124e055f55bdb
+modified: 1605290676699
+created: 1605290214258
+fileName: Mentorship API
+contents: |
+  openapi: 3.0.0
+  info:
+    description: "This is an Mentorship API docs"
+    version: 1.0.0
+    title: Mentorship
+    contact:
+      email: 180103095@stu.sdu.edu.kz
+    license:
+      name: Apache 2.0
+      url: http://www.apache.org/licenses/LICENSE-2.0.html
+  tags:
+    - name: vacancies
+      description: Vacancies root
+  paths:
+    /vacancies:
+      post:
+        tags:
+          - vacancies
+        summary: Add a new vacancy to the database
+        description: ""
+        operationId: addVacancy
+        requestBody:
+          $ref: "#/components/requestBodies/Vacancy"
+        responses:
+          "405":
+            description: Invalid input
+  externalDocs:
+    description: Find out more about Mentorship
+    url: https://github.com/AlphaKennyBudy/Mentorship
+  servers:
+    - url: https://mentorship-api.herokuapp.com
+  components:
+    requestBodies:
+      Vacancy:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Vacancy"
+        description: Vacancy object that needs to be added to the database
+        required: true
+    schemas:
+      Vacancy:
+        type: object
+contentType: yaml
