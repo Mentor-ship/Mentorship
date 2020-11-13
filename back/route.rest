@@ -58,7 +58,7 @@ POST http://localhost:5000/employer_and_vacancies
 Content-Type: application/json
 
 {
-    "employer_id": "5666",
+    "employer_id": "566",
     "vacancy_id": "3843"
 
 }
