@@ -1,0 +1,36 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb0a9ba8e1
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbc16175e3
+modified: 1605374802755
+created: 1605369339687
+url: "{{ base_url }}/vacancies"
+name: Add a new vacancy to the database
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+        "employer_id": "23",
+        "name_of_vacancy": "Designer",
+        "duty": "High",
+        "requirements": "Nothing",
+        "salary": 150000,
+        "country": "Kazakhstan",
+        "city": "Karagandy",
+        "experience": 2
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+    id: pair_80dc8dc6c218478a9f0d471c004250c6
+authentication: {}
+metaSortKey: -1605369339687
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
