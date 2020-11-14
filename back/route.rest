@@ -1,0 +1,97 @@
+GET http://localhost:5000/students
+
+###
+GET http://localhost:5000/students/5f84b7da696ee51c84c3ebc6
+
+###
+POST http://localhost:5000/students
+Content-Type: application/json
+
+{
+    "name": "Aruzhan",
+    "surname": "Serikbayeva",
+    "email": "1234",
+    "phone": "1234"
+}
+
+### 
+PUT http://localhost:5000/students/5f84d4691a002c3184d9667b 
+Content-Type: application/json
+
+{
+    "name": "Somebody",
+    "surname": "Somebody",
+    "email": "somebody@gmail.com",
+    "phone": "87783120332"
+}
+
+### 
+DELETE http://localhost:5000/students/5f84b7da696ee51c84c3ebc6
+
+###
+POST http://localhost:5000/user/signup
+Content-Type: application/json
+
+{
+   "username": "qwerrty000",
+   "email": "helloworld3@gmail.com",
+   "phone_number": "+7783120333",
+   "password": "iloveanime",
+   "first_name": "Madiyar",
+   "last_name": "Mukushev",
+   "country": "Kazakhstan",
+   "city": "Pavlodar"
+}
+
+###
+POST http://localhost:5000/user/login
+Content-Type: application/json
+
+{
+   "email": "helloworld2@gmail.com",
+   "password": "iloveanime"
+}
+
+
+###
+POST http://localhost:5000/employer_and_vacancies
+Content-Type: application/json
+
+{
+    "employer_id": "5666",
+    "vacancy_id": "38483"
+
+}
+
+### 
+PUT http://localhost:5000/employer_and_vacancies/5f892aa5d6b5f440b8c8184a
+Content-Type: application/json
+
+{
+    "employer_id": "345345",
+    "vacancy_id": "1312312"
+}
+
+### 
+DELETE http://localhost:5000/employer_and_vacancies/5f892aa5d6b5f440b8c8184a
+
+
+###
+GET http://localhost:5000/user/me
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWY4YWEzYTYwYWViNGYwMjY4NDgxZjI5In0sImlhdCI6MTYwMjkyNjc1MSwiZXhwIjoxNjAyOTMwMzUxfQ.UXKBw3hRLLkA2-1OegTfk1PfPyTp4RMb0b2fU3GtsPI
+
+###
+POST http://localhost:5000/vacancies/getCompanyName
+Content-Type: application/json
+
+{
+    "employer_id": "5f84a0875db2425a254ddfc1"
+}
+
+###
+POST http://localhost:5000/user/checkMail
+Content-Type: application/json
+
+{
+    "email": "helloworld2@gmail.com"
+}
