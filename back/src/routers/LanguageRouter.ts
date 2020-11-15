@@ -1,8 +1,17 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import Language from '../models/Language';
+import Language, { LanguageDoc } from '../models/Language';
 
 // Initializing router
 const router: Router = Router();
+
+// Declaring new namespace for Response
+declare global {
+  namespace Express {
+    interface Response {
+      language: LanguageDoc;
+    }
+  }
+}
 
 // GET ALL
 router.get('/', async (req, res) => {
@@ -56,7 +65,7 @@ async function getLanguage(req: Request, res: Response, next: NextFunction) {
   try {
     const language = await Language.findById(req.params.id);
 
-    res.language = language;
+    res.language = language!;
     next();
   } catch (error) {
     return res.status(500).json({
