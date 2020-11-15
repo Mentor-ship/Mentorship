@@ -1,10 +1,10 @@
 _id: spc_54f34525ed9f4fee9b8d7797e8d1b09f
 type: ApiSpec
 parentId: wrk_3dd3d75737e34464b7c124e055f55bdb
-modified: 1605374680986
+modified: 1605468269267
 created: 1605290214258
 fileName: Mentorship API
-contents: |
+contents: |-
   openapi: 3.0.0
   info:
     description: "This is a Mentorship API docs"
@@ -34,26 +34,92 @@ contents: |
         responses:
           "405":
             description: Invalid input
-      put:
+      get:
         tags:
           - vacancies
-        summary: Update an existing vacancy
+        summary: Get all vacancies from database
         description: ""
-        operationId: updatePet
+        operationId: getAllVacancies
         requestBody:
           $ref: "#/components/requestBodies/Vacancy"
         responses:
-          "400":
-            description: Invalid vacancy supplied
-          "404":
-            description: Vacancy not found
           "405":
-            description: Validation exception     
+            description: Invalid input
+    "/vacancies/{:id}":
+        put:
+          tags:
+            - vacancies
+          summary: Updated vacancy
+          description: ""
+          operationId: updateVacancy
+          parameters:
+            - name: :id
+              in: path
+              description: Vacancy that need to be updated
+              required: true
+              schema:
+                type: string
+          requestBody:
+            $ref: "#/components/requestBodies/Vacancy"
+            description: ""
+            required: true
+          responses:
+            "400":
+              description: Invalid ID supplied
+            "404":
+              description: Vacancy not found
+        delete:
+          tags:
+            - vacancies
+          summary: Delete vacancy
+          description: ""
+          operationId: deleteVacancy
+          parameters:
+            - name: :id
+              in: path
+              description: The id that needs to be deleted
+              required: true
+              schema:
+                type: string
+                
+          responses:
+            "400":
+              description: Invalid username supplied
+            "404":
+              description: User not found
+        get:
+          tags:
+            - vacancies
+          summary: Get vacancy by ID
+          description: ""
+          operationId: getVacancyById
+          parameters:
+            - name: id
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: successful operation
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/Vacancy"
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/Vacancy"
+            "400":
+              description: Invalid ID supplied
+            "404":
+              description: Vacancy not found
+          
   externalDocs:
     description: Find out more about Mentorship
     url: https://github.com/AlphaKennyBudy/Mentorship
   servers:
-  #   - url: https://mentorship-api.herokuapp.com
+    - url: https://mentorship-api.herokuapp.com
     - url: http://localhost:5000
   components:
     requestBodies:
@@ -62,9 +128,41 @@ contents: |
           application/json:
             schema:
               $ref: "#/components/schemas/Vacancy"
-        description: Vacancy object that needs to be added to the database
         required: true
     schemas:
       Vacancy:
         type: object
+        properties:
+          title:
+            type: string
+          salary:
+            type: integer
+            format: int64
+          currencyId:
+            type: string
+          chargeType:
+            type: string
+          vacancyPicture:
+            type: string
+          categoryId:
+            type: string
+          dutyTypeId:
+            type: string
+          cityId:
+            type: string
+          companyId:
+            type: string
+          experince:
+            type: integer
+            format: int64
+          experienceType:
+            type: string
+          timeTypeId:
+            type: string
+          description:
+            type: string
+          requirements:
+            type: string
+        xml:
+          name: Vacancy
 contentType: yaml
