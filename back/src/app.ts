@@ -4,6 +4,9 @@ import cors from 'cors';
 
 import 'dotenv/config';
 
+// Importing routers
+import LanguageRouter from './routers/LanguageRouter';
+
 const app: Application = express();
 
 mongoose.connect(process.env.MONGO_URI!, {
@@ -24,6 +27,10 @@ app.get('/', (req, res) => {
   });
 });
 
+// Applying imported routers in routes
+app.use('/languages', LanguageRouter);
+
+// Listening to the port
 app.listen(process.env.PORT || 5000, () => {
   console.log(`Server is listening on port ${process.env.PORT}`);
 });
