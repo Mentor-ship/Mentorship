@@ -1,822 +1,2102 @@
 _id: spc_54f34525ed9f4fee9b8d7797e8d1b09f
 type: ApiSpec
 parentId: wrk_3dd3d75737e34464b7c124e055f55bdb
-modified: 1605540584108
+modified: 1605545341903
 created: 1605290214258
 fileName: Mentorship API
-contents: |-
-  openapi: 3.0.0
+contents: "openapi: 3.0.0
+
   info:
-    description: "This is a Mentorship API docs"
-    version: 1.0.0
-    title: Mentorship
-    contact:
-      email: 180103095@stu.sdu.edu.kz
-    license:
-      name: Apache 2.0
-      url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+  \  description: \"This is a Mentorship API docs\"
+
+  \  version: 1.0.0
+
+  \  title: Mentorship
+
+  \  contact:
+
+  \    email: 180103095@stu.sdu.edu.kz
+
+  \  license:
+
+  \    name: Apache 2.0
+
+  \    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
   tags:
-    - name: vacancies
-      description: Vacancies root
-    - name: currencies
-      description: Currencies root
-    - name: сharge_types
-      description: Charge types root
-    - name: categories
-      description: Categories root
-    - name: duty_types
-      description: Duty types root
-    - name: time_types
-      description: Time types root
-    - name: companies
-      description: Companies root
-    - name: experience_types
-      description: Experience types root
+
+  \  - name: vacancies
+
+  \    description: Vacancies root
+
+  \  - name: currencies
+
+  \    description: Currencies root
+
+  \  - name: сharge_types
+
+  \    description: Charge types root
+
+  \  - name: categories
+
+  \    description: Categories root
+
+  \  - name: duty_types
+
+  \    description: Duty types root
+
+  \  - name: time_types
+
+  \    description: Time types root
+
+  \  - name: companies
+
+  \    description: Companies root
+
+  \  - name: experience_types
+
+  \    description: Experience types root
+
+  \  - name: groups
+
+  \    description: Groups root
+
+  \  - name: users
+
+  \    description: Users root
+
   paths:
-    /vacancies:
-      post:
-        tags:
-          - vacancies
-        summary: Add a new vacancy to the database
-        description: ""
-        operationId: addVacancy
-        requestBody:
-          $ref: "#/components/requestBodies/Vacancy"
-        responses:
-          "405":
-            description: Invalid input
-      get:
-        tags:
-          - vacancies
-        summary: Get all vacancies from database
-        description: ""
-        operationId: getAllVacancies
-        requestBody:
-          $ref: "#/components/requestBodies/Vacancy"
-        responses:
-          "405":
-            description: Invalid input
-    "/vacancies/{:id}":
-        put:
-          tags:
-            - vacancies
-          summary: Updated vacancy
-          description: ""
-          operationId: updateVacancy
-          parameters:
-            - name: :id
-              in: path
-              description: Vacancy that need to be updated
-              required: true
-              schema:
-                type: string
-          requestBody:
-            $ref: "#/components/requestBodies/Vacancy"
-            description: ""
-            required: true
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Vacancy not found
-        delete:
-          tags:
-            - vacancies
-          summary: Delete vacancy
-          description: ""
-          operationId: deleteVacancy
-          parameters:
-            - name: :id
-              in: path
-              description: The id that needs to be deleted
-              required: true
-              schema:
-                type: string
-                
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Vacancy not found
-        get:
-          tags:
-            - vacancies
-          summary: Get vacancy by ID
-          description: ""
-          operationId: getVacancyById
-          parameters:
-            - name: id
-              in: path
-              description: ""
-              required: true
-              schema:
-                type: string
-          responses:
-            "200":
-              description: successful operation
-              content:
-                application/xml:
-                  schema:
-                    $ref: "#/components/schemas/Vacancy"
-                application/json:
-                  schema:
-                    $ref: "#/components/schemas/Vacancy"
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Vacancy not found
-    /currencies:
-      post:
-        tags:
-          - currencies
-        summary: Add a new currency to the database
-        description: ""
-        operationId: addCurrency
-        requestBody:
-          $ref: "#/components/requestBodies/Currency"
-        responses:
-          "405":
-            description: Invalid input
-      get:
-        tags:
-          - currencies
-        summary: Get all currencies from database
-        description: ""
-        operationId: getAllCurrencies
-        requestBody:
-          $ref: "#/components/requestBodies/Currency"
-        responses:
-          "405":
-            description: Invalid input
-    "/currencies/{:id}":
-        put:
-          tags:
-            - currencies
-          summary: Updated currency
-          description: ""
-          operationId: updateCurrency
-          parameters:
-            - name: :id
-              in: path
-              description: Currency that need to be updated
-              required: true
-              schema:
-                type: string
-          requestBody:
-            $ref: "#/components/requestBodies/Currency"
-            description: ""
-            required: true
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Currency not found
-        delete:
-          tags:
-            - currencies
-          summary: Delete Currency
-          description: ""
-          operationId: deleteCurrency
-          parameters:
-            - name: :id
-              in: path
-              description: The id that needs to be deleted
-              required: true
-              schema:
-                type: string
-                
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Currency not found
-        get:
-          tags:
-            - currencies
-          summary: Get currency by ID
-          description: ""
-          operationId: getCurrencyById
-          parameters:
-            - name: id
-              in: path
-              description: ""
-              required: true
-              schema:
-                type: string
-          responses:
-            "200":
-              description: successful operation
-              content:
-                application/xml:
-                  schema:
-                    $ref: "#/components/schemas/Currency"
-                application/json:
-                  schema:
-                    $ref: "#/components/schemas/Currency"
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Currency not found 
-    /сharge_types:
-      post:
-        tags:
-          - сharge_types
-        summary: Add a new charge type to the database
-        description: ""
-        operationId: addChargeType
-        requestBody:
-          $ref: "#/components/requestBodies/Charge_type"
-        responses:
-          "405":
-            description: Invalid input
-      get:
-        tags:
-          - сharge_types
-        summary: Get all charge types from database
-        description: ""
-        operationId: getAllChargeTypes
-        requestBody:
-          $ref:"#/components/requestBodies/Charge_type"
-        responses:
-          "405":
-            description: Invalid input
-    "/сharge_types/{:id}":
-        put:
-          tags:
-            - сharge_types
-          summary: Updated charge type
-          description: ""
-          operationId: updateChargeType
-          parameters:
-            - name: :id
-              in: path
-              description: Charge type that need to be updated
-              required: true
-              schema:
-                type: string
-          requestBody:
-            $ref: "#/components/requestBodies/Charge_type"
-            description: ""
-            required: true
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Charge type not found
-        delete:
-          tags:
-            - сharge_types
-          summary: Delete charge type
-          description: ""
-          operationId: deleteChargeType
-          parameters:
-            - name: :id
-              in: path
-              description: The id that needs to be deleted
-              required: true
-              schema:
-                type: string
-                
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Charge type not found
-        get:
-          tags:
-            - сharge_types
-          summary: Get charge type by ID
-          description: ""
-          operationId: getChargeTypeById
-          parameters:
-            - name: id
-              in: path
-              description: ""
-              required: true
-              schema:
-                type: string
-          responses:
-            "200":
-              description: successful operation
-              content:
-                application/xml:
-                  schema:
-                    $ref: "#/components/schemas/Charge_type"
-                application/json:
-                  schema:
-                    $ref: "#/components/schemas/Charge_type"
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Charge type not found
-    /duty_types:
-      post:
-        tags:
-          - duty_types
-        summary: Add a new duty type to the database
-        description: ""
-        operationId: addDutyType
-        requestBody:
-          $ref: "#/components/requestBodies/Duty_type"
-        responses:
-          "405":
-            description: Invalid input
-      get:
-        tags:
-          - duty_types
-        summary: Get all duty types from database
-        description: ""
-        operationId: getAllDutyTypes
-        requestBody:
-          $ref: "#/components/requestBodies/Duty_type"
-        responses:
-          "405":
-            description: Invalid input
-    "/duty_types/{:id}":
-        put:
-          tags:
-            - duty_types
-          summary: Updated 
-          description: ""
-          operationId: updateDutyType
-          parameters:
-            - name: :id
-              in: path
-              description: Duty type that need to be updated
-              required: true
-              schema:
-                type: string
-          requestBody:
-            $ref: "#/components/requestBodies/Duty_type"
-            description: ""
-            required: true
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Duty type not found
-        delete:
-          tags:
-            - duty_types
-          summary: Delete duty types
-          description: ""
-          operationId: deleteDutyType
-          parameters:
-            - name: :id
-              in: path
-              description: The id that needs to be deleted
-              required: true
-              schema:
-                type: string
-                
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Duty type not found
-        get:
-          tags:
-            - duty_types
-          summary: Get duty type by ID
-          description: ""
-          operationId: geDutyTypeById
-          parameters:
-            - name: id
-              in: path
-              description: ""
-              required: true
-              schema:
-                type: string
-          responses:
-            "200":
-              description: successful operation
-              content:
-                application/xml:
-                  schema:
-                    $ref: "#/components/schemas/Duty_type"
-                application/json:
-                  schema:
-                    $ref: "#/components/schemas/Duty_type"
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Duty type not found 
-    /time_types:
-      post:
-        tags:
-          - time_types
-        summary: Add a new time type to the database
-        description: ""
-        operationId: addTimeType
-        requestBody:
-          $ref: "#/components/requestBodies/Time_type"
-        responses:
-          "405":
-            description: Invalid input
-      get:
-        tags:
-          - time_types
-        summary: Get all time types from database
-        description: ""
-        operationId: getAllTimeTypes
-        requestBody:
-          $ref: "#/components/requestBodies/Time_type"
-        responses:
-          "405":
-            description: Invalid input
-    "/time_types/{:id}":
-        put:
-          tags:
-            - time_types
-          summary: Updated
-          description: ""
-          operationId: updateTimeType 
-          parameters:
-            - name: :id
-              in: path
-              description: Time type that need to be updated
-              required: true
-              schema:
-                type: string
-          requestBody:
-            $ref: "#/components/requestBodies/Time_type"
-            description: ""
-            required: true
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Time type not found
-        delete:
-          tags:
-            - time_types
-          summary: Delete Time type
-          description: ""
-          operationId: deleteTimeType 
-          parameters:
-            - name: :id
-              in: path
-              description: The id that needs to be deleted
-              required: true
-              schema:
-                type: string
-                
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Time type not found
-        get:
-          tags:
-            - time_types
-          summary: Get time type by ID
-          description: ""
-          operationId: geTimeTypeById
-          parameters:
-            - name: id
-              in: path
-              description: ""
-              required: true
-              schema:
-                type: string
-          responses:
-            "200":
-              description: successful operation
-              content:
-                application/xml:
-                  schema:
-                    $ref: "#/components/schemas/Time_type"
-                application/json:
-                  schema:
-                    $ref: "#/components/schemas/Time_type"
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Time type not found 
-    /companies:
-      post:
-        tags:
-          - companies
-        summary: Add a new company to the database
-        description: ""
-        operationId: addCompany
-        requestBody:
-          $ref:  "#/components/requestBodies/Company"
-        responses:
-          "405":
-            description: Invalid input
-      get:
-        tags:
-          - companies
-        summary: Get all companies from database
-        description: ""
-        operationId: getAllCompanies
-        requestBody:
-          $ref: "#/components/requestBodies/Company"
-        responses:
-          "405":
-            description: Invalid input
-    "/companies/{:id}":
-        put:
-          tags:
-            - companies
-          summary: Updated company
-          description: ""
-          operationId: updateCompany
-          parameters:
-            - name: :id
-              in: path
-              description: Company that need to be updated
-              required: true
-              schema:
-                type: string
-          requestBody:
-            $ref:  "#/components/requestBodies/Company"
-            description: ""
-            required: true
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Company not found
-        delete:
-          tags:
-            - companies
-          summary: Delete company
-          description: ""
-          operationId: deleteCompany
-          parameters:
-            - name: :id
-              in: path
-              description: The id that needs to be deleted
-              required: true
-              schema:
-                type: string
-                
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Company not found
-        get:
-          tags:
-            - companies
-          summary: Get company by ID
-          description: ""
-          operationId: getCompanyById
-          parameters:
-            - name: id
-              in: path
-              description: ""
-              required: true
-              schema:
-                type: string
-          responses:
-            "200":
-              description: successful operation
-              content:
-                application/xml:
-                  schema:
-                    $ref: "#/components/schemas/Company"
-                application/json:
-                  schema:
-                    $ref: "#/components/schemas/Company"
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Company not found
-    /experience_types:
-      post:
-        tags:
-          - experience_types
-        summary: Add a new experience type to the database
-        description: ""
-        operationId: addExperienceType
-        requestBody:
-          $ref: "#/components/requestBodies/Experience_type"
-        responses:
-          "405":
-            description: Invalid input
-      get:
-        tags:
-          - experience_types
-        summary: Get all experience types from database
-        description: ""
-        operationId: getAllexperienceTypes
-        requestBody:
-          $ref: "#/components/requestBodies/Experience_type"
-        responses:
-          "405":
-            description: Invalid input
-    "/experience_types/{:id}":
-        put:
-          tags:
-            - experience_types
-          summary: Updated
-          description: ""
-          operationId: updatedExperienceType 
-          parameters:
-            - name: :id
-              in: path
-              description: Experience type that need to be updated
-              required: true
-              schema:
-                type: string
-          requestBody:
-            $ref: "#/components/requestBodies/Experience_type"
-            description: ""
-            required: true
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Experience type not found
-        delete:
-          tags:
-            - experience_types
-          summary: Delete experience type
-          description: ""
-          operationId: deleteExperienceType
-          parameters:
-            - name: :id
-              in: path
-              description: The id that needs to be deleted
-              required: true
-              schema:
-                type: string
-                
-          responses:
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Experience type not found
-        get:
-          tags:
-            - experience_types
-          summary: Get experience type by ID
-          description: ""
-          operationId: getExperienceTypeById
-          parameters:
-            - name: id
-              in: path
-              description: ""
-              required: true
-              schema:
-                type: string
-          responses:
-            "200":
-              description: successful operation
-              content:
-                application/xml:
-                  schema:
-                    $ref: "#/components/schemas/Experience_type"
-                application/json:
-                  schema:
-                    $ref: "#/components/schemas/Experience_type"
-            "400":
-              description: Invalid ID supplied
-            "404":
-              description: Experience type not found 
+
+  \  /vacancies:
+
+  \    post:
+
+  \      tags:
+
+  \        - vacancies
+
+  \      summary: Add a new vacancy to the database
+
+  \      description: \"\"
+
+  \      operationId: addVacancy
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Vacancy\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \    get:
+
+  \      tags:
+
+  \        - vacancies
+
+  \      summary: Get all vacancies from database
+
+  \      description: \"\"
+
+  \      operationId: getAllVacancies
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Vacancy\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \  \"/vacancies/{:id}\":
+
+  \      put:
+
+  \        tags:
+
+  \          - vacancies
+
+  \        summary: Updated vacancy
+
+  \        description: \"\"
+
+  \        operationId: updateVacancy
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: Vacancy that need to be updated
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        requestBody:
+
+  \          $ref: \"#/components/requestBodies/Vacancy\"
+
+  \          description: \"\"
+
+  \          required: true
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Vacancy not found
+
+  \      delete:
+
+  \        tags:
+
+  \          - vacancies
+
+  \        summary: Delete vacancy
+
+  \        description: \"\"
+
+  \        operationId: deleteVacancy
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: The id that needs to be deleted
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \             \ 
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Vacancy not found
+
+  \      get:
+
+  \        tags:
+
+  \          - vacancies
+
+  \        summary: Get vacancy by ID
+
+  \        description: \"\"
+
+  \        operationId: getVacancyById
+
+  \        parameters:
+
+  \          - name: id
+
+  \            in: path
+
+  \            description: \"\"
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        responses:
+
+  \          \"200\":
+
+  \            description: successful operation
+
+  \            content:
+
+  \              application/xml:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Vacancy\"
+
+  \              application/json:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Vacancy\"
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Vacancy not found
+
+  \  /currencies:
+
+  \    post:
+
+  \      tags:
+
+  \        - currencies
+
+  \      summary: Add a new currency to the database
+
+  \      description: \"\"
+
+  \      operationId: addCurrency
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Currency\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \    get:
+
+  \      tags:
+
+  \        - currencies
+
+  \      summary: Get all currencies from database
+
+  \      description: \"\"
+
+  \      operationId: getAllCurrencies
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Currency\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \  \"/currencies/{:id}\":
+
+  \      put:
+
+  \        tags:
+
+  \          - currencies
+
+  \        summary: Updated currency
+
+  \        description: \"\"
+
+  \        operationId: updateCurrency
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: Currency that need to be updated
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        requestBody:
+
+  \          $ref: \"#/components/requestBodies/Currency\"
+
+  \          description: \"\"
+
+  \          required: true
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Currency not found
+
+  \      delete:
+
+  \        tags:
+
+  \          - currencies
+
+  \        summary: Delete Currency
+
+  \        description: \"\"
+
+  \        operationId: deleteCurrency
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: The id that needs to be deleted
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \             \ 
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Currency not found
+
+  \      get:
+
+  \        tags:
+
+  \          - currencies
+
+  \        summary: Get currency by ID
+
+  \        description: \"\"
+
+  \        operationId: getCurrencyById
+
+  \        parameters:
+
+  \          - name: id
+
+  \            in: path
+
+  \            description: \"\"
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        responses:
+
+  \          \"200\":
+
+  \            description: successful operation
+
+  \            content:
+
+  \              application/xml:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Currency\"
+
+  \              application/json:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Currency\"
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Currency not found\ 
+
+  \  /сharge_types:
+
+  \    post:
+
+  \      tags:
+
+  \        - сharge_types
+
+  \      summary: Add a new charge type to the database
+
+  \      description: \"\"
+
+  \      operationId: addChargeType
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Charge_type\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \    get:
+
+  \      tags:
+
+  \        - сharge_types
+
+  \      summary: Get all charge types from database
+
+  \      description: \"\"
+
+  \      operationId: getAllChargeTypes
+
+  \      requestBody:
+
+  \        $ref:\"#/components/requestBodies/Charge_type\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \  \"/сharge_types/{:id}\":
+
+  \      put:
+
+  \        tags:
+
+  \          - сharge_types
+
+  \        summary: Updated charge type
+
+  \        description: \"\"
+
+  \        operationId: updateChargeType
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: Charge type that need to be updated
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        requestBody:
+
+  \          $ref: \"#/components/requestBodies/Charge_type\"
+
+  \          description: \"\"
+
+  \          required: true
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Charge type not found
+
+  \      delete:
+
+  \        tags:
+
+  \          - сharge_types
+
+  \        summary: Delete charge type
+
+  \        description: \"\"
+
+  \        operationId: deleteChargeType
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: The id that needs to be deleted
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \             \ 
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Charge type not found
+
+  \      get:
+
+  \        tags:
+
+  \          - сharge_types
+
+  \        summary: Get charge type by ID
+
+  \        description: \"\"
+
+  \        operationId: getChargeTypeById
+
+  \        parameters:
+
+  \          - name: id
+
+  \            in: path
+
+  \            description: \"\"
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        responses:
+
+  \          \"200\":
+
+  \            description: successful operation
+
+  \            content:
+
+  \              application/xml:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Charge_type\"
+
+  \              application/json:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Charge_type\"
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Charge type not found
+
+  \  /duty_types:
+
+  \    post:
+
+  \      tags:
+
+  \        - duty_types
+
+  \      summary: Add a new duty type to the database
+
+  \      description: \"\"
+
+  \      operationId: addDutyType
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Duty_type\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \    get:
+
+  \      tags:
+
+  \        - duty_types
+
+  \      summary: Get all duty types from database
+
+  \      description: \"\"
+
+  \      operationId: getAllDutyTypes
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Duty_type\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \  \"/duty_types/{:id}\":
+
+  \      put:
+
+  \        tags:
+
+  \          - duty_types
+
+  \        summary: Updated\ 
+
+  \        description: \"\"
+
+  \        operationId: updateDutyType
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: Duty type that need to be updated
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        requestBody:
+
+  \          $ref: \"#/components/requestBodies/Duty_type\"
+
+  \          description: \"\"
+
+  \          required: true
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Duty type not found
+
+  \      delete:
+
+  \        tags:
+
+  \          - duty_types
+
+  \        summary: Delete duty types
+
+  \        description: \"\"
+
+  \        operationId: deleteDutyType
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: The id that needs to be deleted
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \             \ 
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Duty type not found
+
+  \      get:
+
+  \        tags:
+
+  \          - duty_types
+
+  \        summary: Get duty type by ID
+
+  \        description: \"\"
+
+  \        operationId: geDutyTypeById
+
+  \        parameters:
+
+  \          - name: id
+
+  \            in: path
+
+  \            description: \"\"
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        responses:
+
+  \          \"200\":
+
+  \            description: successful operation
+
+  \            content:
+
+  \              application/xml:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Duty_type\"
+
+  \              application/json:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Duty_type\"
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Duty type not found\ 
+
+  \  /time_types:
+
+  \    post:
+
+  \      tags:
+
+  \        - time_types
+
+  \      summary: Add a new time type to the database
+
+  \      description: \"\"
+
+  \      operationId: addTimeType
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Time_type\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \    get:
+
+  \      tags:
+
+  \        - time_types
+
+  \      summary: Get all time types from database
+
+  \      description: \"\"
+
+  \      operationId: getAllTimeTypes
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Time_type\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \  \"/time_types/{:id}\":
+
+  \      put:
+
+  \        tags:
+
+  \          - time_types
+
+  \        summary: Updated
+
+  \        description: \"\"
+
+  \        operationId: updateTimeType\ 
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: Time type that need to be updated
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        requestBody:
+
+  \          $ref: \"#/components/requestBodies/Time_type\"
+
+  \          description: \"\"
+
+  \          required: true
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Time type not found
+
+  \      delete:
+
+  \        tags:
+
+  \          - time_types
+
+  \        summary: Delete Time type
+
+  \        description: \"\"
+
+  \        operationId: deleteTimeType\ 
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: The id that needs to be deleted
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \             \ 
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Time type not found
+
+  \      get:
+
+  \        tags:
+
+  \          - time_types
+
+  \        summary: Get time type by ID
+
+  \        description: \"\"
+
+  \        operationId: geTimeTypeById
+
+  \        parameters:
+
+  \          - name: id
+
+  \            in: path
+
+  \            description: \"\"
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        responses:
+
+  \          \"200\":
+
+  \            description: successful operation
+
+  \            content:
+
+  \              application/xml:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Time_type\"
+
+  \              application/json:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Time_type\"
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Time type not found\ 
+
+  \  /companies:
+
+  \    post:
+
+  \      tags:
+
+  \        - companies
+
+  \      summary: Add a new company to the database
+
+  \      description: \"\"
+
+  \      operationId: addCompany
+
+  \      requestBody:
+
+  \        $ref:  \"#/components/requestBodies/Company\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \    get:
+
+  \      tags:
+
+  \        - companies
+
+  \      summary: Get all companies from database
+
+  \      description: \"\"
+
+  \      operationId: getAllCompanies
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Company\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \  \"/companies/{:id}\":
+
+  \      put:
+
+  \        tags:
+
+  \          - companies
+
+  \        summary: Updated company
+
+  \        description: \"\"
+
+  \        operationId: updateCompany
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: Company that need to be updated
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        requestBody:
+
+  \          $ref:  \"#/components/requestBodies/Company\"
+
+  \          description: \"\"
+
+  \          required: true
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Company not found
+
+  \      delete:
+
+  \        tags:
+
+  \          - companies
+
+  \        summary: Delete company
+
+  \        description: \"\"
+
+  \        operationId: deleteCompany
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: The id that needs to be deleted
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \             \ 
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Company not found
+
+  \      get:
+
+  \        tags:
+
+  \          - companies
+
+  \        summary: Get company by ID
+
+  \        description: \"\"
+
+  \        operationId: getCompanyById
+
+  \        parameters:
+
+  \          - name: id
+
+  \            in: path
+
+  \            description: \"\"
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        responses:
+
+  \          \"200\":
+
+  \            description: successful operation
+
+  \            content:
+
+  \              application/xml:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Company\"
+
+  \              application/json:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Company\"
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Company not found
+
+  \  /experience_types:
+
+  \    post:
+
+  \      tags:
+
+  \        - experience_types
+
+  \      summary: Add a new experience type to the database
+
+  \      description: \"\"
+
+  \      operationId: addExperienceType
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Experience_type\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \    get:
+
+  \      tags:
+
+  \        - experience_types
+
+  \      summary: Get all experience types from database
+
+  \      description: \"\"
+
+  \      operationId: getAllExperienceTypes
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Experience_type\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \  \"/experience_types/{:id}\":
+
+  \      put:
+
+  \        tags:
+
+  \          - experience_types
+
+  \        summary: Updated
+
+  \        description: \"\"
+
+  \        operationId: updatedExperienceType\ 
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: Experience type that need to be updated
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        requestBody:
+
+  \          $ref: \"#/components/requestBodies/Experience_type\"
+
+  \          description: \"\"
+
+  \          required: true
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Experience type not found
+
+  \      delete:
+
+  \        tags:
+
+  \          - experience_types
+
+  \        summary: Delete experience type
+
+  \        description: \"\"
+
+  \        operationId: deleteExperienceType
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: The id that needs to be deleted
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \             \ 
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Experience type not found
+
+  \      get:
+
+  \        tags:
+
+  \          - experience_types
+
+  \        summary: Get experience type by ID
+
+  \        description: \"\"
+
+  \        operationId: getExperienceTypeById
+
+  \        parameters:
+
+  \          - name: id
+
+  \            in: path
+
+  \            description: \"\"
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        responses:
+
+  \          \"200\":
+
+  \            description: successful operation
+
+  \            content:
+
+  \              application/xml:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Experience_type\"
+
+  \              application/json:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Experience_type\"
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Experience type not found\ 
+
+  \  /groups:
+
+  \    post:
+
+  \      tags:
+
+  \        - groups
+
+  \      summary: Add a new group type to the database
+
+  \      description: \"\"
+
+  \      operationId: addGroup
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Group\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \    get:
+
+  \      tags:
+
+  \        - groups
+
+  \      summary: Get all groups from database
+
+  \      description: \"\"
+
+  \      operationId: getAllGroups
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/Group\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \  \"/groups/{:id}\":
+
+  \      put:
+
+  \        tags:
+
+  \          - groups
+
+  \        summary: Updated
+
+  \        description: \"\"
+
+  \        operationId: updatedGroup
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: Group that need to be updated
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        requestBody:
+
+  \          $ref: \"#/components/requestBodies/Group\"
+
+  \          description: \"\"
+
+  \          required: true
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Group not found
+
+  \      delete:
+
+  \        tags:
+
+  \          - groups
+
+  \        summary: Delete groups
+
+  \        description: \"\"
+
+  \        operationId: deleteGroups
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: The id that needs to be deleted
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \             \ 
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Group not found
+
+  \      get:
+
+  \        tags:
+
+  \          - groups
+
+  \        summary: Get group by ID
+
+  \        description: \"\"
+
+  \        operationId: getGroupById
+
+  \        parameters:
+
+  \          - name: id
+
+  \            in: path
+
+  \            description: \"\"
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        responses:
+
+  \          \"200\":
+
+  \            description: successful operation
+
+  \            content:
+
+  \              application/xml:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Group\"
+
+  \              application/json:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/Group\"
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: Experience type not found\ 
+
+  \  /users:
+
+  \    post:
+
+  \      tags:
+
+  \        - users
+
+  \      summary: Add a new user to the database
+
+  \      description: \"\"
+
+  \      operationId: addUser
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/User\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \    get:
+
+  \      tags:
+
+  \        - users
+
+  \      summary: Get all users from database
+
+  \      description: \"\"
+
+  \      operationId: getAllUsers
+
+  \      requestBody:
+
+  \        $ref: \"#/components/requestBodies/User\"
+
+  \      responses:
+
+  \        \"405\":
+
+  \          description: Invalid input
+
+  \  \"/users/{:id}\":
+
+  \      put:
+
+  \        tags:
+
+  \          - users
+
+  \        summary: Updated
+
+  \        description: \"\"
+
+  \        operationId: updatedUser
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: User that need to be updated
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        requestBody:
+
+  \          $ref: \"#/components/requestBodies/User\"
+
+  \          description: \"\"
+
+  \          required: true
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: User not found
+
+  \      delete:
+
+  \        tags:
+
+  \          - users
+
+  \        summary: Delete users
+
+  \        description: \"\"
+
+  \        operationId: deleteUsers
+
+  \        parameters:
+
+  \          - name: :id
+
+  \            in: path
+
+  \            description: The id that needs to be deleted
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        responses:
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: User not found
+
+  \      get:
+
+  \        tags:
+
+  \          - users
+
+  \        summary: Get user by ID
+
+  \        description: \"\"
+
+  \        operationId: getUserById
+
+  \        parameters:
+
+  \          - name: id
+
+  \            in: path
+
+  \            description: \"\"
+
+  \            required: true
+
+  \            schema:
+
+  \              type: string
+
+  \        responses:
+
+  \          \"200\":
+
+  \            description: successful operation
+
+  \            content:
+
+  \              application/xml:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/User\"
+
+  \              application/json:
+
+  \                schema:
+
+  \                  $ref: \"#/components/schemas/User\"
+
+  \          \"400\":
+
+  \            description: Invalid ID supplied
+
+  \          \"404\":
+
+  \            description: User not found\ 
+
   externalDocs:
-    description: Find out more about Mentorship
-    url: https://github.com/AlphaKennyBudy/Mentorship
+
+  \  description: Find out more about Mentorship
+
+  \  url: https://github.com/AlphaKennyBudy/Mentorship
+
   servers:
-    - url: https://mentorship-api.herokuapp.com
-    - url: http://localhost:5000
+
+  \  - url: https://mentorship-api.herokuapp.com
+
+  \  - url: http://localhost:5000
+
   components:
-    requestBodies:
-      Vacancy:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Vacancy"
-      Company:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Company"
-      Currency:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Currency"
-      Charge_type:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Charge_type"
-      Category:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Category"
-      Duty_type:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Duty_type"   
-      Time_type:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Time_type"  
-      Experience_type:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/Experience_type" 
-        required: true
-    schemas:
-      Vacancy:
-        type: object
-        properties:
-          title:
-            type: string
-          salary:
-            type: number
-          currencyId:
-            type: string
-          chargeType:
-            type: string
-          vacancyPicture:
-            type: string
-          categoryId:
-            type: string
-          dutyTypeId:
-            type: string
-          cityId:
-            type: string
-          companyId:
-            type: string
-          experince:
-            type: number
-          experienceType:
-            type: string
-          timeTypeId:
-            type: string
-          description:
-            type: string
-          requirements:
-            type: string
-        xml:
-          name: Vacancy
-      Company:
-        type: object
-        properties:
-          logo:
-            type: string
-          companyName:
-            type: string
-          currencyId:
-            type: string
-          cityId:
-            type: string
-          description:
-            type: string
-        xml:
-          name: Company
-      Currency:
-        type: object
-        properties:
-          currencyName:
-            type: string
-          logo:
-            type: string
-        xml:
-          name: Currency
-      Charge_type:
-        type: object
-        properties:
-          chargeType:
-            type: string
-        xml:
-          name: Charge_type
-      Category:
-        type: object
-        properties:
-          categoryName:
-            type: string
-        xml:
-          name: Category
-      Duty_type:
-        type: object
-        properties:
-          dutyType:
-            type: string
-        xml:
-          name: Duty_type
-      Time_type:
-        type: object
-        properties:
-          timeType:
-            type: string
-        xml:
-          name: Time_type
-      Experience_type:
-        type: object
-        properties:
-          experienceType:
-            type: string
-        xml:
-          name: Experience_type
+
+  \  requestBodies:
+
+  \    Vacancy:
+
+  \      content:
+
+  \        application/json:
+
+  \          schema:
+
+  \            $ref: \"#/components/schemas/Vacancy\"
+
+  \    Company:
+
+  \      content:
+
+  \        application/json:
+
+  \          schema:
+
+  \            $ref: \"#/components/schemas/Company\"
+
+  \    Currency:
+
+  \      content:
+
+  \        application/json:
+
+  \          schema:
+
+  \            $ref: \"#/components/schemas/Currency\"
+
+  \    Charge_type:
+
+  \      content:
+
+  \        application/json:
+
+  \          schema:
+
+  \            $ref: \"#/components/schemas/Charge_type\"
+
+  \    Category:
+
+  \      content:
+
+  \        application/json:
+
+  \          schema:
+
+  \            $ref: \"#/components/schemas/Category\"
+
+  \    Duty_type:
+
+  \      content:
+
+  \        application/json:
+
+  \          schema:
+
+  \            $ref: \"#/components/schemas/Duty_type\"  \ 
+
+  \    Time_type:
+
+  \      content:
+
+  \        application/json:
+
+  \          schema:
+
+  \            $ref: \"#/components/schemas/Time_type\" \ 
+
+  \    Experience_type:
+
+  \      content:
+
+  \        application/json:
+
+  \          schema:
+
+  \            $ref: \"#/components/schemas/Experience_type\"
+
+  \    Group:
+
+  \      content:
+
+  \        application/json:
+
+  \          schema:
+
+  \            $ref: \"#/components/schemas/Group\"
+
+  \    User:
+
+  \      content:
+
+  \        application/json:
+
+  \          schema:
+
+  \            $ref: \"#/components/schemas/User\"
+
+  \      required: true
+
+  \  schemas:
+
+  \    Vacancy:
+
+  \      type: object
+
+  \      properties:
+
+  \        title:
+
+  \          type: string
+
+  \        salary:
+
+  \          type: number
+
+  \        currencyId:
+
+  \          type: string
+
+  \        chargeType:
+
+  \          type: string
+
+  \        vacancyPicture:
+
+  \          type: string
+
+  \        categoryId:
+
+  \          type: string
+
+  \        dutyTypeId:
+
+  \          type: string
+
+  \        cityId:
+
+  \          type: string
+
+  \        companyId:
+
+  \          type: string
+
+  \        experince:
+
+  \          type: number
+
+  \        experienceType:
+
+  \          type: string
+
+  \        timeTypeId:
+
+  \          type: string
+
+  \        description:
+
+  \          type: string
+
+  \        requirements:
+
+  \          type: string
+
+  \      xml:
+
+  \        name: Vacancy
+
+  \    Company:
+
+  \      type: object
+
+  \      properties:
+
+  \        logo:
+
+  \          type: string
+
+  \        companyName:
+
+  \          type: string
+
+  \        currencyId:
+
+  \          type: string
+
+  \        cityId:
+
+  \          type: string
+
+  \        description:
+
+  \          type: string
+
+  \      xml:
+
+  \        name: Company
+
+  \    Currency:
+
+  \      type: object
+
+  \      properties:
+
+  \        currencyName:
+
+  \          type: string
+
+  \        logo:
+
+  \          type: string
+
+  \      xml:
+
+  \        name: Currency
+
+  \    Charge_type:
+
+  \      type: object
+
+  \      properties:
+
+  \        chargeType:
+
+  \          type: string
+
+  \      xml:
+
+  \        name: Charge_type
+
+  \    Category:
+
+  \      type: object
+
+  \      properties:
+
+  \        categoryName:
+
+  \          type: string
+
+  \      xml:
+
+  \        name: Category
+
+  \    Duty_type:
+
+  \      type: object
+
+  \      properties:
+
+  \        dutyType:
+
+  \          type: string
+
+  \      xml:
+
+  \        name: Duty_type
+
+  \    Time_type:
+
+  \      type: object
+
+  \      properties:
+
+  \        timeType:
+
+  \          type: string
+
+  \      xml:
+
+  \        name: Time_type
+
+  \    Experience_type:
+
+  \      type: object
+
+  \      properties:
+
+  \        experienceType:
+
+  \          type: string
+
+  \      xml:
+
+  \        name: Experience_type
+
+  \    Group:
+
+  \      type: object
+
+  \      properties:
+
+  \        groupName:
+
+  \          type: string
+
+  \      xml:
+
+  \        name: Group
+
+  \    User:
+
+  \      type: object
+
+  \      properties:
+
+  \        groupId:
+
+  \          type: string
+
+  \        statusId:
+
+  \          type: string
+
+  \        username:
+
+  \          type: string
+
+  \        password:
+
+  \          type: string
+
+  \        email:
+
+  \          type: string
+
+  \        phone:
+
+  \          type: number
+
+  \        firstName:
+
+  \          type: string
+
+  \        lastName:
+
+  \          type: string
+
+  \        lastLogin:
+
+  \          type: string
+
+  \        cityId:
+
+  \          type: string
+
+  \        profilePicture:
+
+  \          type: string
+
+  \        status:
+
+  \          type: string
+
+  \        xml:
+
+  \          name: User
+
+  \      "
 contentType: yaml
