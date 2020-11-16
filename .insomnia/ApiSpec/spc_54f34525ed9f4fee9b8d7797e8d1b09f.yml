@@ -1,7 +1,7 @@
 _id: spc_54f34525ed9f4fee9b8d7797e8d1b09f
 type: ApiSpec
 parentId: wrk_3dd3d75737e34464b7c124e055f55bdb
-modified: 1605535080651
+modified: 1605540143611
 created: 1605290214258
 fileName: Mentorship API
 contents: |-
@@ -26,6 +26,8 @@ contents: |-
       description: Categories root
     - name: duty_types
       description: Duty types root
+    - name: time_types
+      description: Time types root
     - name: companies
       description: Companies root
   paths:
@@ -129,7 +131,7 @@ contents: |-
         description: ""
         operationId: addCurrency
         requestBody:
-          $ref: "#/components/schemas/Currency"
+          $ref: "#/components/requestBodies/Currency"
         responses:
           "405":
             description: Invalid input
@@ -140,7 +142,7 @@ contents: |-
         description: ""
         operationId: getAllCurrencies
         requestBody:
-          $ref: "#/components/schemas/Currency"
+          $ref: "#/components/requestBodies/Currency"
         responses:
           "405":
             description: Invalid input
@@ -159,7 +161,7 @@ contents: |-
               schema:
                 type: string
           requestBody:
-            $ref: "#/components/schemas/Currency"
+            $ref: "#/components/requestBodies/Currency"
             description: ""
             required: true
           responses:
@@ -221,7 +223,7 @@ contents: |-
         description: ""
         operationId: addChargeType
         requestBody:
-          $ref: "#/components/schemas/Charge_type"
+          $ref: "#/components/requestBodies/Charge_type"
         responses:
           "405":
             description: Invalid input
@@ -232,7 +234,7 @@ contents: |-
         description: ""
         operationId: getAllChargeTypes
         requestBody:
-          $ref: "#/components/schemas/Charge_type"
+          $ref:"#/components/requestBodies/Charge_type"
         responses:
           "405":
             description: Invalid input
@@ -251,7 +253,7 @@ contents: |-
               schema:
                 type: string
           requestBody:
-            $ref: "#/components/schemas/Charge_type"
+            $ref: "#/components/requestBodies/Charge_type"
             description: ""
             required: true
           responses:
@@ -313,7 +315,7 @@ contents: |-
         description: ""
         operationId: addDutyType
         requestBody:
-          $ref: "#/components/schemas/Duty_type"
+          $ref: "#/components/requestBodies/Duty_type"
         responses:
           "405":
             description: Invalid input
@@ -322,9 +324,9 @@ contents: |-
           - duty_types
         summary: Get all duty types from database
         description: ""
-        operationId: getAllDutyType
+        operationId: getAllDutyTypes
         requestBody:
-          $ref: "#/components/schemas/Duty_type"
+          $ref: "#/components/requestBodies/Duty_type"
         responses:
           "405":
             description: Invalid input
@@ -343,7 +345,7 @@ contents: |-
               schema:
                 type: string
           requestBody:
-            $ref: "#/components/schemas/Duty_type"
+            $ref: "#/components/requestBodies/Duty_type"
             description: ""
             required: true
           responses:
@@ -397,6 +399,98 @@ contents: |-
               description: Invalid ID supplied
             "404":
               description: Duty type not found 
+    /time_types:
+      post:
+        tags:
+          - time_types
+        summary: Add a new time type to the database
+        description: ""
+        operationId: addTimeType
+        requestBody:
+          $ref: "#/components/requestBodies/Time_type"
+        responses:
+          "405":
+            description: Invalid input
+      get:
+        tags:
+          - time_types
+        summary: Get all time types from database
+        description: ""
+        operationId: getAllTimeTypes
+        requestBody:
+          $ref: "#/components/requestBodies/Time_type"
+        responses:
+          "405":
+            description: Invalid input
+    "/time_types/{:id}":
+        put:
+          tags:
+            - time_types
+          summary: Updated
+          description: ""
+          operationId: updateTimeType 
+          parameters:
+            - name: :id
+              in: path
+              description: Time type that need to be updated
+              required: true
+              schema:
+                type: string
+          requestBody:
+            $ref: "#/components/requestBodies/Time_type"
+            description: ""
+            required: true
+          responses:
+            "400":
+              description: Invalid ID supplied
+            "404":
+              description: Time type not found
+        delete:
+          tags:
+            - time_types
+          summary: Delete Time type
+          description: ""
+          operationId: deleteTimeType 
+          parameters:
+            - name: :id
+              in: path
+              description: The id that needs to be deleted
+              required: true
+              schema:
+                type: string
+                
+          responses:
+            "400":
+              description: Invalid ID supplied
+            "404":
+              description: Time type not found
+        get:
+          tags:
+            - time_types
+          summary: Get time type by ID
+          description: ""
+          operationId: geTimeTypeById
+          parameters:
+            - name: id
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: successful operation
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/Time_type"
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/Time_type"
+            "400":
+              description: Invalid ID supplied
+            "404":
+              description: Time type not found 
     /companies:
       post:
         tags:
@@ -405,7 +499,7 @@ contents: |-
         description: ""
         operationId: addCompany
         requestBody:
-          $ref: "#/components/schemas/Company"
+          $ref:  "#/components/requestBodies/Company"
         responses:
           "405":
             description: Invalid input
@@ -416,7 +510,7 @@ contents: |-
         description: ""
         operationId: getAllCompanies
         requestBody:
-          $ref: "#/components/schemas/Company"
+          $ref: "#/components/requestBodies/Company"
         responses:
           "405":
             description: Invalid input
@@ -435,7 +529,7 @@ contents: |-
               schema:
                 type: string
           requestBody:
-            $ref: "#/components/schemas/Company"
+            $ref:  "#/components/requestBodies/Company"
             description: ""
             required: true
           responses:
@@ -502,6 +596,36 @@ contents: |-
           application/json:
             schema:
               $ref: "#/components/schemas/Vacancy"
+      Company:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Company"
+      Currency:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Currency"
+      Charge_type:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Charge_type"
+      Category:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Category"
+      Duty_type:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Duty_type"   
+      Time_type:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Time_type"   
         required: true
     schemas:
       Vacancy:
@@ -582,4 +706,11 @@ contents: |-
             type: string
         xml:
           name: Duty_type
+      Time_type:
+        type: object
+        properties:
+          timeType:
+            type: string
+        xml:
+          name: Time_type
 contentType: yaml
