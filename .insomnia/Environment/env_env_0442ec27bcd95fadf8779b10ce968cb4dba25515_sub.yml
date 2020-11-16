@@ -1,13 +1,13 @@
 _id: env_env_0442ec27bcd95fadf8779b10ce968cb4dba25515_sub
 type: Environment
 parentId: env_0442ec27bcd95fadf8779b10ce968cb4dba25515
-modified: 1605374680726
+modified: 1605533303939
 created: 1605369339709
 name: OpenAPI env
 data:
-  scheme: http
+  scheme: https
   base_path: ""
-  host: localhost:5000
+  host: mentorship-api.herokuapp.com
 dataPropertyOrder: null
 color: null
 isPrivate: false
