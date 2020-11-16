@@ -1,7 +1,7 @@
 _id: spc_54f34525ed9f4fee9b8d7797e8d1b09f
 type: ApiSpec
 parentId: wrk_3dd3d75737e34464b7c124e055f55bdb
-modified: 1605540143611
+modified: 1605540584108
 created: 1605290214258
 fileName: Mentorship API
 contents: |-
@@ -30,6 +30,8 @@ contents: |-
       description: Time types root
     - name: companies
       description: Companies root
+    - name: experience_types
+      description: Experience types root
   paths:
     /vacancies:
       post:
@@ -583,6 +585,98 @@ contents: |-
               description: Invalid ID supplied
             "404":
               description: Company not found
+    /experience_types:
+      post:
+        tags:
+          - experience_types
+        summary: Add a new experience type to the database
+        description: ""
+        operationId: addExperienceType
+        requestBody:
+          $ref: "#/components/requestBodies/Experience_type"
+        responses:
+          "405":
+            description: Invalid input
+      get:
+        tags:
+          - experience_types
+        summary: Get all experience types from database
+        description: ""
+        operationId: getAllexperienceTypes
+        requestBody:
+          $ref: "#/components/requestBodies/Experience_type"
+        responses:
+          "405":
+            description: Invalid input
+    "/experience_types/{:id}":
+        put:
+          tags:
+            - experience_types
+          summary: Updated
+          description: ""
+          operationId: updatedExperienceType 
+          parameters:
+            - name: :id
+              in: path
+              description: Experience type that need to be updated
+              required: true
+              schema:
+                type: string
+          requestBody:
+            $ref: "#/components/requestBodies/Experience_type"
+            description: ""
+            required: true
+          responses:
+            "400":
+              description: Invalid ID supplied
+            "404":
+              description: Experience type not found
+        delete:
+          tags:
+            - experience_types
+          summary: Delete experience type
+          description: ""
+          operationId: deleteExperienceType
+          parameters:
+            - name: :id
+              in: path
+              description: The id that needs to be deleted
+              required: true
+              schema:
+                type: string
+                
+          responses:
+            "400":
+              description: Invalid ID supplied
+            "404":
+              description: Experience type not found
+        get:
+          tags:
+            - experience_types
+          summary: Get experience type by ID
+          description: ""
+          operationId: getExperienceTypeById
+          parameters:
+            - name: id
+              in: path
+              description: ""
+              required: true
+              schema:
+                type: string
+          responses:
+            "200":
+              description: successful operation
+              content:
+                application/xml:
+                  schema:
+                    $ref: "#/components/schemas/Experience_type"
+                application/json:
+                  schema:
+                    $ref: "#/components/schemas/Experience_type"
+            "400":
+              description: Invalid ID supplied
+            "404":
+              description: Experience type not found 
   externalDocs:
     description: Find out more about Mentorship
     url: https://github.com/AlphaKennyBudy/Mentorship
@@ -625,7 +719,12 @@ contents: |-
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Time_type"   
+              $ref: "#/components/schemas/Time_type"  
+      Experience_type:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Experience_type" 
         required: true
     schemas:
       Vacancy:
@@ -713,4 +812,11 @@ contents: |-
             type: string
         xml:
           name: Time_type
+      Experience_type:
+        type: object
+        properties:
+          experienceType:
+            type: string
+        xml:
+          name: Experience_type
 contentType: yaml
