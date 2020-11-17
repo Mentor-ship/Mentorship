@@ -1,6 +1,8 @@
 import express, { Application } from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import methodOverride from 'method-override';
+import Grid from 'gridfs-stream';
 
 import 'dotenv/config';
 
@@ -9,17 +11,27 @@ import LanguageRouter from './routers/LanguageRouter';
 
 const app: Application = express();
 
-mongoose.connect(process.env.MONGO_URI!, {
+const connect = mongoose.createConnection(process.env.MONGO_URI!, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
-const db = mongoose.connection;
-db.on('error', (error) => console.log(error));
-db.once('open', () => console.log('Connected to Database'));
+// Init gfs
+let gfs;
 
+connect.on('error', (error) => console.log(error));
+connect.once('open', () => {
+  console.log('Connected to Database');
+
+  // Init stream
+  // gfs = Grid(connect.db, mongoose.mongo);
+  // gfs.collection('images');
+});
+
+// Middlewares
 app.use(cors());
 app.use(express.json());
+// app.use(methodOverride('_method'));
 
 app.get('/', (req, res) => {
   res.json({

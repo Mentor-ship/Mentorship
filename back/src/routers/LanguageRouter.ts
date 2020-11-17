@@ -1,4 +1,9 @@
 import { Router, Request, Response, NextFunction } from 'express';
+import multer from 'multer';
+import GridFsStorage from 'multer-gridfs-storage';
+import crypto from 'crypto';
+import path from 'path';
+
 import Language, { LanguageDoc } from '../models/Language';
 import mutateObject from '../utils/mutateObject';
 
@@ -13,6 +18,28 @@ declare global {
     }
   }
 }
+
+// Create storage engine
+const storage = new GridFsStorage({
+  url: process.env.MONGO_URI!,
+  file: (req, file) => {
+    return new Promise((resolve, reject) => {
+      crypto.randomBytes(16, (err, buf) => {
+        if (err) {
+          return reject(err);
+        }
+        const filename = buf.toString('hex') + path.extname(file.originalname);
+        const fileInfo = {
+          filename: filename,
+          bucketName: 'images',
+        };
+        resolve(fileInfo);
+      });
+    });
+  },
+});
+
+const upload = multer({ storage });
 
 // GET ALL
 router.get('/', async (_, res: Response) => {
@@ -32,20 +59,29 @@ router.get('/:id', getLanguage, async (req: Request, res: Response) => {
 });
 
 // POST ONE
-router.post('/', async (req: Request, res: Response) => {
-  const { languageName, logo } = req.body;
+router.post(
+  '/',
+  upload.fields([{ name: 'languageName' }, { name: 'logo', maxCount: 1 }]),
+  async (req: Request, res: Response) => {
+    const { languageName } = req.body;
+    const logoURL = `${req.files['logo'][0]['filename']}`;
 
-  const language = Language.build({ languageName, logo });
+    console.log({ languageName, logoURL });
 
-  try {
-    const newLanguage = await language.save();
-    res.status(200).json(newLanguage);
-  } catch (error) {
-    res.status(400).json({
-      message: error.message,
-    });
-  }
-});
+    const language = Language.build({ languageName, logo: logoURL });
+    console.log('Builded!');
+    try {
+      console.log('Saving');
+      const newLanguage = await language.save();
+      console.log('Saved');
+      res.status(200).json(newLanguage);
+    } catch (error) {
+      res.status(400).json({
+        message: error.message,
+      });
+    }
+  },
+);
 
 // PUT ONE
 router.put('/:id', getLanguage, async (req: Request, res: Response) => {
