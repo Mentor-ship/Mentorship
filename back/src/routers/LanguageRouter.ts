@@ -15,7 +15,7 @@ declare global {
 }
 
 // GET ALL
-router.get('/', async (req, res) => {
+router.get('/', async (_, res: Response) => {
   try {
     const languages = await Language.find();
     res.status(200).json(languages);
@@ -27,12 +27,12 @@ router.get('/', async (req, res) => {
 });
 
 // GET ONE
-router.get('/:id', getLanguage, async (req: Request, res, Response) => {
+router.get('/:id', getLanguage, async (req: Request, res: Response) => {
   res.status(500).send(res.language);
 });
 
 // POST ONE
-router.post('/', async (req, res) => {
+router.post('/', async (req: Request, res: Response) => {
   const { languageName, logo } = req.body;
 
   const language = Language.build({ languageName, logo });
@@ -48,7 +48,7 @@ router.post('/', async (req, res) => {
 });
 
 // PUT ONE
-router.put('/:id', getLanguage, async (req, res) => {
+router.put('/:id', getLanguage, async (req: Request, res: Response) => {
   mutateObject(req.body, res.language);
 
   try {
@@ -56,6 +56,20 @@ router.put('/:id', getLanguage, async (req, res) => {
     res.status(200).json(updatedLanguage);
   } catch (error) {
     res.status(400).json({
+      message: error.message,
+    });
+  }
+});
+
+// DELETE ONE
+router.delete('/:id', getLanguage, async (req: Request, res: Response) => {
+  try {
+    await res.language.remove();
+    res.status(200).json({
+      message: 'Language has been deleted',
+    });
+  } catch (error) {
+    res.status(500).json({
       message: error.message,
     });
   }
