@@ -1,5 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import Language, { LanguageDoc } from '../models/Language';
+import mutateObject from '../utils/mutateObject';
 
 // Initializing router
 const router: Router = Router();
@@ -17,7 +18,7 @@ declare global {
 router.get('/', async (req, res) => {
   try {
     const languages = await Language.find();
-    res.json(languages);
+    res.status(200).json(languages);
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -48,8 +49,15 @@ router.post('/', async (req, res) => {
 
 // PUT ONE
 router.put('/:id', getLanguage, async (req, res) => {
-  if (req.body.languageName && req.body.languageName !== '') {
-    res.language.languageName = req.body.languageName;
+  mutateObject(req.body, res.language);
+
+  try {
+    const updatedLanguage = await res.language.save();
+    res.status(200).json(updatedLanguage);
+  } catch (error) {
+    res.status(400).json({
+      message: error.message,
+    });
   }
 });
 
