@@ -86,18 +86,26 @@ router.post(
 );
 
 // PUT ONE
-router.put('/:id', getLanguage, async (req: Request, res: Response) => {
-  mutateObject(req.body, res.language);
+router.put(
+  '/:id',
+  [getLanguage, upload.fields([{ name: 'languageName' }, { name: 'logo', maxCount: 1 }])],
+  async (req: Request, res: Response) => {
+    mutateObject(req.body, res.language);
 
-  try {
-    const updatedLanguage = await res.language.save();
-    res.status(200).json(updatedLanguage);
-  } catch (error) {
-    res.status(400).json({
-      message: error.message,
-    });
-  }
-});
+    if (req.files['logo']) {
+      res.language.logo = req.files['logo'][0]['filename'];
+    }
+
+    try {
+      const updatedLanguage = await res.language.save();
+      res.status(200).json(updatedLanguage);
+    } catch (error) {
+      res.status(400).json({
+        message: error.message,
+      });
+    }
+  },
+);
 
 // DELETE ONE
 router.delete('/:id', getLanguage, async (req: Request, res: Response) => {
