@@ -6,6 +6,7 @@ import path from 'path';
 
 import Language, { LanguageDoc } from '../models/Language';
 import mutateObject from '../utils/mutateObject';
+import { deleteImage } from './ImageRouter';
 
 // Initializing router
 const router: Router = Router();
@@ -90,6 +91,7 @@ router.put(
   '/:id',
   [getLanguage, upload.fields([{ name: 'languageName' }, { name: 'logo', maxCount: 1 }])],
   async (req: Request, res: Response) => {
+    deleteImage(res.language.logo);
     mutateObject(req.body, res.language);
 
     if (req.files['logo']) {
@@ -110,6 +112,7 @@ router.put(
 // DELETE ONE
 router.delete('/:id', getLanguage, async (req: Request, res: Response) => {
   try {
+    deleteImage(res.language.logo);
     await res.language.remove();
     res.status(200).json({
       message: 'Language has been deleted',

@@ -1,5 +1,5 @@
 import { Router, Request, Response } from 'express';
-import { connect, connection as mConnection, mongo } from 'mongoose';
+import { connect, connection as mConnection, mongo, Types } from 'mongoose';
 
 // Initializing router
 const router: Router = Router();
@@ -25,7 +25,7 @@ connection.once('open', () => {
   });
 });
 
-// GET ALL
+// GET ONE
 router.get('/:filename', (req: Request, res: Response) => {
   gridFS.find({ filename: req.params.filename }).toArray((err, files) => {
     if (!files[0] || files.length === 0) {
@@ -48,5 +48,18 @@ router.get('/:filename', (req: Request, res: Response) => {
     }
   });
 });
+
+export function deleteImage(filename: String) {
+  gridFS.find({ filename }).toArray((err, files) => {
+    if (files[0] && files.length !== 0) {
+      gridFS.delete(new Types.ObjectId(files[0]._id), (err, data) => {
+        if (err) {
+          console.log(err);
+        }
+        console.log('Deleted successfully');
+      });
+    }
+  });
+}
 
 export default router;
