@@ -2,12 +2,12 @@ import express, { Application } from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import methodOverride from 'method-override';
-import Grid from 'gridfs-stream';
 
 import 'dotenv/config';
 
 // Importing routers
 import LanguageRouter from './routers/LanguageRouter';
+import ImageRouter from './routers/ImageRouter';
 
 const app: Application = express();
 
@@ -16,16 +16,10 @@ const connect = mongoose.connect(process.env.MONGO_URI!, {
   useUnifiedTopology: true,
 });
 
-// Init gfs
-let gfs;
-
 const connection = mongoose.connection;
 connection.on('error', (error) => console.log(error));
 connection.once('open', () => {
   console.log('Connected to Database');
-  // Init stream
-  gfs = Grid(connection.db, mongoose.mongo);
-  gfs.collection('images');
 });
 
 // Middlewares
@@ -41,6 +35,7 @@ app.get('/', (req, res) => {
 
 // Applying imported routers in routes
 app.use('/languages', LanguageRouter);
+app.use('/images', ImageRouter);
 
 // Listening to the port
 app.listen(process.env.PORT || 5000, () => {
