@@ -1,7 +1,7 @@
 _id: req_wrk_3dd3d75737e34464b7c124e055f55bdb032165c4
 type: Request
 parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb69c7c732
-modified: 1605629995272
+modified: 1605699584701
 created: 1605626375441
 url: "{{ base_url }}/сharge_types/{{ :id }}"
 name: Updated charge type

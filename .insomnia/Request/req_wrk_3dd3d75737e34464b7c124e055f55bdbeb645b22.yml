@@ -1,7 +1,7 @@
 _id: req_wrk_3dd3d75737e34464b7c124e055f55bdbeb645b22
 type: Request
 parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbc16175e3
-modified: 1605629995401
+modified: 1605699584804
 created: 1605626375522
 url: "{{ base_url }}/vacancies"
 name: Get all vacancies from database

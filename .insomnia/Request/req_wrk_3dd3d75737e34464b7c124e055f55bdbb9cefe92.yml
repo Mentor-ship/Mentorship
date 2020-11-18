@@ -1,7 +1,7 @@
 _id: req_wrk_3dd3d75737e34464b7c124e055f55bdbb9cefe92
 type: Request
 parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbebdea362
-modified: 1605629995346
+modified: 1605699584756
 created: 1605626375496
 url: "{{ base_url }}/currencies"
 name: Add a new currency to the database
