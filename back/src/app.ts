@@ -11,7 +11,7 @@ import LanguageRouter from './routers/LanguageRouter';
 
 const app: Application = express();
 
-const connect = mongoose.createConnection(process.env.MONGO_URI!, {
+const connect = mongoose.connect(process.env.MONGO_URI!, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -19,13 +19,13 @@ const connect = mongoose.createConnection(process.env.MONGO_URI!, {
 // Init gfs
 let gfs;
 
-connect.on('error', (error) => console.log(error));
-connect.once('open', () => {
+const connection = mongoose.connection;
+connection.on('error', (error) => console.log(error));
+connection.once('open', () => {
   console.log('Connected to Database');
-
   // Init stream
-  // gfs = Grid(connect.db, mongoose.mongo);
-  // gfs.collection('images');
+  gfs = Grid(connection.db, mongoose.mongo);
+  gfs.collection('images');
 });
 
 // Middlewares

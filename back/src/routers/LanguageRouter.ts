@@ -44,7 +44,7 @@ const upload = multer({ storage });
 // GET ALL
 router.get('/', async (_, res: Response) => {
   try {
-    const languages = await Language.find();
+    const languages = await Language.find({}, (err) => console.log(err));
     res.status(200).json(languages);
   } catch (error) {
     res.status(500).json({
@@ -64,16 +64,11 @@ router.post(
   upload.fields([{ name: 'languageName' }, { name: 'logo', maxCount: 1 }]),
   async (req: Request, res: Response) => {
     const { languageName } = req.body;
-    const logoURL = `${req.files['logo'][0]['filename']}`;
+    const logo = req.files['logo'][0]['filename'];
 
-    console.log({ languageName, logoURL });
-
-    const language = Language.build({ languageName, logo: logoURL });
-    console.log('Builded!');
+    const language = Language.build({ languageName, logo });
     try {
-      console.log('Saving');
       const newLanguage = await language.save();
-      console.log('Saved');
       res.status(200).json(newLanguage);
     } catch (error) {
       res.status(400).json({
