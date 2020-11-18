@@ -1,0 +1,31 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbf1375a251
+type: Request
+parentId: wrk_3dd3d75737e34464b7c124e055f55bdb
+modified: 1605629994949
+created: 1605626375366
+url: "{{ base_url }}/licenses"
+name: Add a new license to the database
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "logo": "string",
+      "licenseDate": null,
+      "licenseName": "string",
+      "tags": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375366
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

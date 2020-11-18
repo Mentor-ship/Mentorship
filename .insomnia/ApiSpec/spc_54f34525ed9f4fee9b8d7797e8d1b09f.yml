@@ -1,7 +1,7 @@
 _id: spc_54f34525ed9f4fee9b8d7797e8d1b09f
 type: ApiSpec
 parentId: wrk_3dd3d75737e34464b7c124e055f55bdb
-modified: 1605545882855
+modified: 1605699531952
 created: 1605290214258
 fileName: Mentorship API
 contents: |-
@@ -36,6 +36,8 @@ contents: |-
       description: Groups root
     - name: users
       description: Users root
+    - name: languages
+      description: Languages root
   paths:
     /vacancies:
       post:
@@ -955,12 +957,99 @@ contents: |-
               description: Invalid ID supplied
             "404":
               description: License not found 
+    /languages:
+      post:
+        tags:
+          - languages
+        summary: Add a new language to the database
+        description: ""
+        operationId: addLanguage
+        requestBody:
+          $ref: "#/components/requestBodies/Language"
+        responses:
+          "405":
+            description: Invalid input
+      get:
+        tags:
+          - languages
+        summary: Get all languages from database
+        description: ""
+        operationId: getAllLanguages
+        responses:
+          "500":
+            description: Internal server error
+          "200":
+            description: Success
+    "/languages/{:id}":
+      put:
+        tags:
+          - languages
+        summary: Updating language
+        description: ""
+        operationId: updatedLanguage
+        parameters:
+          - name: :id
+            in: path
+            description: Language that need to be updated
+            required: true
+            schema:
+              type: string
+        requestBody:
+          $ref: "#/components/requestBodies/Language"
+          description: ""
+        responses:
+          "400":
+            description: Invalid ID supplied
+          "404":
+            description: License not found
+      delete:
+        tags:
+          - languages
+        summary: Delete language
+        description: ""
+        operationId: deleteLanguage
+        parameters:
+          - name: :id
+            in: path
+            description: The id that needs to be deleted
+            required: true
+            schema:
+              type: string
+        responses:
+          "400":
+            description: Invalid ID supplied
+          "404":
+            description: Language not found
+      get:
+        tags:
+          - languages
+        summary: Get language by ID
+        description: ""
+        operationId: getLanguageById
+        parameters:
+          - name: id
+            in: path
+            description: ""
+            required: true
+            schema:
+              type: string
+        responses:
+          "200":
+            description: successful operation
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/Language"
+          "400":
+            description: Invalid ID supplied
+          "404":
+            description: Language not found 
   externalDocs:
     description: Find out more about Mentorship
     url: https://github.com/AlphaKennyBudy/Mentorship
   servers:
-    - url: https://mentorship-api.herokuapp.com
     - url: http://localhost:5000
+    - url: https://mentorship-api.herokuapp.com
   components:
     requestBodies:
       Vacancy:
@@ -1019,6 +1108,12 @@ contents: |-
             schema:
               $ref: "#/components/schemas/License"
         required: true
+      Language:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Language'
+            
     schemas:
       Vacancy:
         type: object
@@ -1161,4 +1256,11 @@ contents: |-
             type: string
         xml:
           name: License
+      Language:
+        type: object
+        properties:
+          languageName: 
+            type: string
+          logo: 
+            type: string
 contentType: yaml

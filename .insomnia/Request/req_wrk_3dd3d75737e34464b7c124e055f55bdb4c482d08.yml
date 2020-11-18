@@ -1,0 +1,21 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb4c482d08
+type: Request
+parentId: wrk_3dd3d75737e34464b7c124e055f55bdb
+modified: 1605629994893
+created: 1605626375359
+url: "{{ base_url }}/licenses/{{ :id }}"
+name: Delete licenses
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1605626375359
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

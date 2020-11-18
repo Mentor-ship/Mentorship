@@ -1,0 +1,35 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbaa671559
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb0265a28b
+modified: 1605638475701
+created: 1605627251069
+url: "{{ base_url }}/languages"
+name: Add a new language to the database
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - name: languageName
+      value: Turkish
+      id: pair_fae152079bf348c68518db94e4e08490
+    - name: logo
+      value: nothing
+      description: ""
+      id: pair_46c69db70c8742908fe444c7aadc7638
+      type: file
+      fileName: C:\Users\Adil\Downloads\ffffff.png
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+    id: pair_9ce7332b8f964e79a0b9de7da30583dd
+authentication: {}
+metaSortKey: -1605627251069
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,21 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb106f17c0
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbaed46479
+modified: 1605629995075
+created: 1605626375404
+url: "{{ base_url }}/companies/{{ :id }}"
+name: Delete company
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1605626375404
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

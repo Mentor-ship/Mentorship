@@ -1,0 +1,21 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb6a523bdc
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb0265a28b
+modified: 1605630010815
+created: 1605629994821
+url: "{{ base_url }}/languages/5fb16ec68eb0dd048dbde4f6"
+name: Get language by ID
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1605629994821
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

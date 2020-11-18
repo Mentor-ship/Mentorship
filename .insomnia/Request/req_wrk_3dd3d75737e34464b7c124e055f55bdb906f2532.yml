@@ -1,0 +1,29 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb906f2532
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb0265a28b
+modified: 1605629994858
+created: 1605627742510
+url: "{{ base_url }}/languages/{{ :id }}"
+name: Updating language
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "languageName": "string",
+      "logo": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605627742510
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

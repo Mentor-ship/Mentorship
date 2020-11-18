@@ -1,0 +1,21 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb93c7fe41
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb7622f0d8
+modified: 1605629995195
+created: 1605626375424
+url: "{{ base_url }}/duty_types/{{ :id }}"
+name: Get duty type by ID
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1605626375424
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

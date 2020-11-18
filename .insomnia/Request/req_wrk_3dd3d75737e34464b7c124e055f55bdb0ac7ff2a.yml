@@ -1,0 +1,28 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb0ac7ff2a
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb0a894db7
+modified: 1605629995014
+created: 1605626375385
+url: "{{ base_url }}/groups/{{ :id }}"
+name: Updated
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "groupName": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375385
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

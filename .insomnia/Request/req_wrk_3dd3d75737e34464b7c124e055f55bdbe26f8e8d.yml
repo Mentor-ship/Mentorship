@@ -1,0 +1,28 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbe26f8e8d
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbe1607cce
+modified: 1605629995042
+created: 1605626375397
+url: "{{ base_url }}/experience_types"
+name: Get all experience types from database
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "experienceType": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375397
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

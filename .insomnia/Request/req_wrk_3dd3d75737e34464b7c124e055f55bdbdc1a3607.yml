@@ -1,0 +1,28 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbdc1a3607
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb0a894db7
+modified: 1605629995019
+created: 1605626375389
+url: "{{ base_url }}/groups"
+name: Add a new group type to the database
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "groupName": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375389
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

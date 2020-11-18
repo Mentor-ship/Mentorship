@@ -1,0 +1,28 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb35f90a40
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbc217d7ab
+modified: 1605629995159
+created: 1605626375417
+url: "{{ base_url }}/time_types/{{ :id }}"
+name: Updated
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "timeType": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375417
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

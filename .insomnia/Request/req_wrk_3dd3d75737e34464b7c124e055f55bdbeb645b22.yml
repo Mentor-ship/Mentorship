@@ -1,12 +1,12 @@
-_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb0a9ba8e1
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbeb645b22
 type: Request
 parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbc16175e3
-modified: 1605629995417
-created: 1605369339687
+modified: 1605629995401
+created: 1605626375522
 url: "{{ base_url }}/vacancies"
-name: Add a new vacancy to the database
+name: Get all vacancies from database
 description: ""
-method: POST
+method: GET
 body:
   mimeType: application/json
   text: |-
@@ -31,7 +31,7 @@ headers:
   - name: Content-Type
     value: application/json
 authentication: {}
-metaSortKey: -1605369339687
+metaSortKey: -1605626375522
 isPrivate: false
 settingStoreCookies: true
 settingSendCookies: true

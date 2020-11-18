@@ -1,0 +1,21 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbbc977abd
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb69c7c732
+modified: 1605629995261
+created: 1605626375438
+url: "{{ base_url }}/сharge_types/{{ :id }}"
+name: Delete charge type
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1605626375438
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

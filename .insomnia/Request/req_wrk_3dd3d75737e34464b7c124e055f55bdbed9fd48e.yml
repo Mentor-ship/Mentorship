@@ -1,0 +1,28 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbed9fd48e
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb69c7c732
+modified: 1605629995283
+created: 1605626375446
+url: "{{ base_url }}/сharge_types"
+name: Add a new charge type to the database
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "chargeType": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375446
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

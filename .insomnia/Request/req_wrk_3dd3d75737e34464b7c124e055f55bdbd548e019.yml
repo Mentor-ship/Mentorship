@@ -1,0 +1,21 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbd548e019
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbc217d7ab
+modified: 1605629995147
+created: 1605626375415
+url: "{{ base_url }}/time_types/{{ :id }}"
+name: Delete Time type
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1605626375415
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

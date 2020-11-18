@@ -1,0 +1,28 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb75d9cd2d
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbe1607cce
+modified: 1605629995027
+created: 1605626375395
+url: "{{ base_url }}/experience_types/{{ :id }}"
+name: Updated
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "experienceType": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375395
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

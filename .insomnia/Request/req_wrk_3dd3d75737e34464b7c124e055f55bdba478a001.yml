@@ -1,0 +1,40 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdba478a001
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb5b7dcd14
+modified: 1605629994989
+created: 1605626375373
+url: "{{ base_url }}/users/{{ :id }}"
+name: Updated
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "groupId": "string",
+      "statusId": "string",
+      "username": "string",
+      "password": "string",
+      "email": "string",
+      "phone": 0,
+      "firstName": "string",
+      "lastName": "string",
+      "lastLogin": "string",
+      "cityId": "string",
+      "profilePicture": "string",
+      "status": "string",
+      "xml": null
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375373
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

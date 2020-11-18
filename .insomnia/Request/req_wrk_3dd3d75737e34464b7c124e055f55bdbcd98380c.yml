@@ -1,0 +1,21 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbcd98380c
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbe1607cce
+modified: 1605629995022
+created: 1605626375391
+url: "{{ base_url }}/experience_types/{{ :id }}"
+name: Get experience type by ID
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1605626375391
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

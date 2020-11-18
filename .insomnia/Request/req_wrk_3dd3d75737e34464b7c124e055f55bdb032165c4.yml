@@ -1,0 +1,28 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb032165c4
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb69c7c732
+modified: 1605629995272
+created: 1605626375441
+url: "{{ base_url }}/сharge_types/{{ :id }}"
+name: Updated charge type
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "chargeType": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375441
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
