@@ -9,6 +9,7 @@ import 'dotenv/config';
 import LanguageRouter from './routers/LanguageRouter';
 import ImageRouter from './routers/ImageRouter';
 import InstitutionRouter from './routers/InstitutionRouter';
+import SkillRouter from './routers/SkillRouter';
 
 const app: Application = express();
 
@@ -38,6 +39,7 @@ app.get('/', (req, res) => {
 app.use('/languages', LanguageRouter);
 app.use('/images', ImageRouter);
 app.use('/institutions', InstitutionRouter);
+app.use('/skills', SkillRouter);
 
 // Listening to the port
 app.listen(process.env.PORT || 5000, () => {
