@@ -1,0 +1,28 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb2d01faa2
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb7622f0d8
+modified: 1605699584690
+created: 1605626375434
+url: "{{ base_url }}/duty_types"
+name: Add a new duty type to the database
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "dutyType": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375434
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

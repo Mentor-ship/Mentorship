@@ -1,0 +1,21 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb824644c8
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbebdea362
+modified: 1605699584729
+created: 1605626375476
+url: "{{ base_url }}/currencies/{{ :id }}"
+name: Delete Currency
+description: ""
+method: DELETE
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1605626375476
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

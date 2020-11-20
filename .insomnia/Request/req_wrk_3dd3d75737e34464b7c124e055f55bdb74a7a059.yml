@@ -1,0 +1,25 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb74a7a059
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbc16175e3
+modified: 1605374680568
+created: 1605373932783
+url: "{{ base_url }}/vacancies"
+name: Update an existing vacancy
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: "{}"
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605373932783
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

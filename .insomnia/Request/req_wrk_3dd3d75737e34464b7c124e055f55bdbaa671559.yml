@@ -1,0 +1,37 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbaa671559
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb0265a28b
+modified: 1605701592894
+created: 1605627251069
+url: "{{ base_url }}/languages"
+name: Add a new language to the database
+description: ""
+method: POST
+body:
+  mimeType: multipart/form-data
+  params:
+    - name: languageName
+      value: Jewesh
+      id: pair_a1df6527b3f14332b938cc20292d42cd
+    - name: logo
+      value: ""
+      description: ""
+      id: pair_e45d7c4b41834997be754ee95baf6a7e
+      type: file
+      multiline: null
+      fileName: C:\Users\Adil\Pictures\019.jpg
+      disabled: false
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+    id: pair_058a7ca8ac5c43c5ad56bb8f95f359ce
+authentication: {}
+metaSortKey: -1605627251069
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

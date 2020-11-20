@@ -1,0 +1,28 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbe5326c11
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbe1607cce
+modified: 1605699584503
+created: 1605626375400
+url: "{{ base_url }}/experience_types"
+name: Add a new experience type to the database
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "experienceType": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375400
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

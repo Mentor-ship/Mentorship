@@ -1,0 +1,32 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb7c13ec04
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbaed46479
+modified: 1605699584532
+created: 1605626375407
+url: "{{ base_url }}/companies"
+name: Get all companies from database
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "logo": "string",
+      "companyName": "string",
+      "currencyId": "string",
+      "cityId": "string",
+      "description": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375407
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
