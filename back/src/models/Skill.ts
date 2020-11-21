@@ -50,7 +50,7 @@ SkillSchema.statics.build = (attr: ISkill) => {
   return new Skill(attr);
 };
 
-const Skill = model<SkillDoc, SkillModelInterface>('skills', SkillSchema);
+const Skill = model<SkillDoc, SkillModelInterface>('Skills', SkillSchema);
 
 export default Skill;
 
