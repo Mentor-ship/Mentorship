@@ -44,7 +44,6 @@ interface CV_and_SkillDoc extends Document {
   skillId: string;
   order: number;
 }
-}
 
 /**
  * Binging build function to schema
