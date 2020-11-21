@@ -61,7 +61,7 @@ CV_and_LanguageSchema.statics.build = (attr: ICV_and_Language) => {
 };
 
 const CV_and_Language = model<CV_and_LanguageDoc, CV_and_LanguageModelInterface>(
-  'CVs_and_Language',
+  'CVs_and_Languages',
   CV_and_LanguageSchema,
 );
 
