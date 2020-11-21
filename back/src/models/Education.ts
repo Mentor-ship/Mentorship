@@ -11,11 +11,11 @@ const EducationSchema = new Schema({
     type: String,
   },
   startDate: {
-    type: String,
+    type: Date,
     required: true,
   },
   endDate: {
-    type: String,
+    type: Date,
     required: true,
   },
   gpa: {
@@ -32,8 +32,8 @@ interface IEducation {
   cvId: string;
   instituteId: string;
   degree: string;
-  startDate: string;
-  endDate: string;
+  startDate: Date;
+  endDate: Date;
   gpa: string;
 }
 
@@ -56,8 +56,8 @@ interface EducationDoc extends Document {
   cvId: string;
   instituteId: string;
   degree: string;
-  startDate: string;
-  endDate: string;
+  startDate: Date;
+  endDate: Date;
   gpa: string;
 }
 

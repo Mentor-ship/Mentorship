@@ -21,7 +21,7 @@ const CV_and_SkillSchema = new Schema({
 interface ICV_and_Skill {
   cvId: string;
   skillId: string;
-  order: string;
+  order: number;
 }
 
 /**
@@ -42,7 +42,7 @@ interface CV_and_SkillModelInterface extends Model<CV_and_SkillDoc> {
 interface CV_and_SkillDoc extends Document {
   cvId: string;
   skillId: string;
-  order: string;
+  order: number;
 }
 }
 

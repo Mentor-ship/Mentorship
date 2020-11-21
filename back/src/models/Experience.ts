@@ -1,15 +1,16 @@
 import { Schema, model, Model, Document } from 'mongoose';
 
 const ExperienceSchema = new Schema({
-  achievementName: {
+  companyId: {
     type: String,
+  },
+  startDate: {
+    type: Date,
     required: true,
   },
-  achievementDate: {
+  endDate: {
     type: Date,
-  },
-  logo: {
-    type: String,
+    required: true,
   },
   tags: {
     type: [String],
@@ -22,10 +23,10 @@ const ExperienceSchema = new Schema({
  * @interface IExperience
  */
 interface IExperience {
-  achievementName: string;
-  achievementDate: Date;
-  logo: string;
-  tags: [String];
+  companyId: string;
+  startDate: Date;
+  endDate: Date;
+  tags: string;
 }
 
 /**
@@ -44,10 +45,10 @@ interface ExperienceModelInterface extends Model<ExperienceDoc> {
  * @extends {Document}
  */
 interface ExperienceDoc extends Document {
-  achievementName: string;
-  achievementDate: Date;
-  logo: string;
-  tags: [String];
+  companyId: string;
+  startDate: Date;
+  endDate: Date;
+  tags: string;
 }
 
 /**
