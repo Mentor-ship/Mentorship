@@ -20,8 +20,8 @@ const CV_and_LicenseSchema = new Schema({
  */
 interface ICV_and_License {
   cvId: string;
-  licenseId: string;
-  order: number;
+  licenseId: String;
+  order: Number;
 }
 
 /**
@@ -41,8 +41,8 @@ interface CV_and_LicenseModelInterface extends Model<CV_and_LicenseDoc> {
  */
 interface CV_and_LicenseDoc extends Document {
   cvId: string;
-  licenseId: string;
-  order: number;
+  licenseId: String;
+  order: Number;
 }
 
 /**
