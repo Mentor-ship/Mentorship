@@ -10,6 +10,7 @@ import LanguageRouter from './routers/LanguageRouter';
 import ImageRouter from './routers/ImageRouter';
 import InstitutionRouter from './routers/InstitutionRouter';
 import SkillRouter from './routers/SkillRouter';
+import CVRouter from './routers/CVRouter';
 
 const app: Application = express();
 
@@ -40,6 +41,7 @@ app.use('/languages', LanguageRouter);
 app.use('/images', ImageRouter);
 app.use('/institutions', InstitutionRouter);
 app.use('/skills', SkillRouter);
+app.use('/cvs', CVRouter);
 
 // Listening to the port
 app.listen(process.env.PORT || 5000, () => {
