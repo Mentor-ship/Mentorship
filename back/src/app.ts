@@ -11,6 +11,8 @@ import ImageRouter from './routers/ImageRouter';
 import InstitutionRouter from './routers/InstitutionRouter';
 import SkillRouter from './routers/SkillRouter';
 import CVRouter from './routers/CVRouter';
+import GroupRouter from './routers/GroupRouter';
+import LicenseRouter from './routers/LicenseRouter';
 
 const app: Application = express();
 
@@ -42,6 +44,8 @@ app.use('/images', ImageRouter);
 app.use('/institutions', InstitutionRouter);
 app.use('/skills', SkillRouter);
 app.use('/cvs', CVRouter);
+app.use('/groups', GroupRouter);
+app.use('/licenses', LicenseRouter);
 
 // Listening to the port
 app.listen(process.env.PORT || 5000, () => {
