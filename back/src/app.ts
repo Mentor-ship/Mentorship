@@ -23,6 +23,9 @@ import CVandAchievementsRouter from './routers/CVandAchievementsRouter';
 import CVandLicenseRouter from './routers/CVandLicenseRouter';
 import CVandSkillRouter from './routers/CVandSkillRouter';
 import CVandLanguageRouter from './routers/CVandLanguageRouter';
+import DutyTypeRouter from './routers/DutyTypeRouter';
+import EducationRouters from './routers/EducationRouters';
+import ExperienceTypeRouter from './routers/ExperienceTypeRouter';
 
 const app: Application = express();
 
@@ -66,6 +69,9 @@ app.use('/cv_and_achievements', CVandAchievementsRouter);
 app.use('/cv_and_licenses', CVandLicenseRouter);
 app.use('/cv_and_skills', CVandSkillRouter);
 app.use('/cv_and_languages', CVandLanguageRouter);
+app.use('/duty_types', DutyTypeRouter);
+app.use('/educations', EducationRouters);
+app.use('/experience_types', ExperienceTypeRouter);
 
 // Listening to the port
 app.listen(process.env.PORT || 5000, () => {
