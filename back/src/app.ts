@@ -16,6 +16,9 @@ import LicenseRouter from './routers/LicenseRouter';
 import ExperienceRouter from './routers/ExperienceRouter';
 import AchievementRouter from './routers/AchievementRouter';
 import CategoryRouter from './routers/CategoryRouter';
+import ChargeTypeRouter from './routers/ChargeTypeRouter';
+import CountryRouter from './routers/CountryRouter';
+import CurrencyRouter from './routers/CurrencyRouter';
 
 const app: Application = express();
 
@@ -52,6 +55,9 @@ app.use('/licenses', LicenseRouter);
 app.use('/experiences', ExperienceRouter);
 app.use('/achievements', AchievementRouter);
 app.use('/categories', CategoryRouter);
+app.use('/charge_types', ChargeTypeRouter);
+app.use('/countries', CountryRouter);
+app.use('/currencies', CurrencyRouter);
 
 // Listening to the port
 app.listen(process.env.PORT || 5000, () => {
