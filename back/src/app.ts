@@ -13,6 +13,9 @@ import SkillRouter from './routers/SkillRouter';
 import CVRouter from './routers/CVRouter';
 import GroupRouter from './routers/GroupRouter';
 import LicenseRouter from './routers/LicenseRouter';
+import ExperienceRouter from './routers/ExperienceRouter';
+import AchievementRouter from './routers/AchievementRouter';
+import CategoryRouter from './routers/CategoryRouter';
 
 const app: Application = express();
 
@@ -46,6 +49,9 @@ app.use('/skills', SkillRouter);
 app.use('/cvs', CVRouter);
 app.use('/groups', GroupRouter);
 app.use('/licenses', LicenseRouter);
+app.use('/experiences', ExperienceRouter);
+app.use('/achievements', AchievementRouter);
+app.use('/categories', CategoryRouter);
 
 // Listening to the port
 app.listen(process.env.PORT || 5000, () => {
