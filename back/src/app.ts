@@ -26,6 +26,8 @@ import CVandLanguageRouter from './routers/CVandLanguageRouter';
 import DutyTypeRouter from './routers/DutyTypeRouter';
 import EducationRouters from './routers/EducationRouters';
 import ExperienceTypeRouter from './routers/ExperienceTypeRouter';
+import LanguageLevelRouter from './routers/LanguageLevelRouter';
+import TimeTypesRouter from './routers/TimeTypesRouter';
 
 const app: Application = express();
 
@@ -72,6 +74,8 @@ app.use('/cv_and_languages', CVandLanguageRouter);
 app.use('/duty_types', DutyTypeRouter);
 app.use('/educations', EducationRouters);
 app.use('/experience_types', ExperienceTypeRouter);
+app.use('/language_levels', LanguageLevelRouter);
+app.use('/time_types', TimeTypesRouter);
 
 // Listening to the port
 app.listen(process.env.PORT || 5000, () => {
