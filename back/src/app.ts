@@ -19,6 +19,10 @@ import CategoryRouter from './routers/CategoryRouter';
 import ChargeTypeRouter from './routers/ChargeTypeRouter';
 import CountryRouter from './routers/CountryRouter';
 import CurrencyRouter from './routers/CurrencyRouter';
+import CVandAchievementsRouter from './routers/CVandAchievementsRouter';
+import CVandLicenseRouter from './routers/CVandLicenseRouter';
+import CVandSkillRouter from './routers/CVandSkillRouter';
+import CVandLanguageRouter from './routers/CVandLanguageRouter';
 
 const app: Application = express();
 
@@ -58,6 +62,10 @@ app.use('/categories', CategoryRouter);
 app.use('/charge_types', ChargeTypeRouter);
 app.use('/countries', CountryRouter);
 app.use('/currencies', CurrencyRouter);
+app.use('/cv_and_achievements', CVandAchievementsRouter);
+app.use('/cv_and_licenses', CVandLicenseRouter);
+app.use('/cv_and_skills', CVandSkillRouter);
+app.use('/cv_and_languages', CVandLanguageRouter);
 
 // Listening to the port
 app.listen(process.env.PORT || 5000, () => {
