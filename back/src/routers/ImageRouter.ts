@@ -49,6 +49,12 @@ router.get('/:filename', (req: Request, res: Response) => {
   });
 });
 
+/**
+ * Deletes image from the db
+ *
+ * @export
+ * @param {String} filename
+ */
 export function deleteImage(filename: String) {
   gridFS.find({ filename }).toArray((err, files) => {
     if (files[0] && files.length !== 0) {
