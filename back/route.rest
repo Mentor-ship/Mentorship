@@ -6,7 +6,6 @@ GET http://localhost:5000/students/5f84b7da696ee51c84c3ebc6
 ###
 POST http://localhost:5000/students
 Content-Type: application/json
-
 {
     "name": "Aruzhan",
     "surname": "Serikbayeva",
