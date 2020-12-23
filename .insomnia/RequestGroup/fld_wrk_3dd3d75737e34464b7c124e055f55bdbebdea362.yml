@@ -1,0 +1,10 @@
+_id: fld_wrk_3dd3d75737e34464b7c124e055f55bdbebdea362
+type: RequestGroup
+parentId: wrk_3dd3d75737e34464b7c124e055f55bdb
+modified: 1605699584942
+created: 1605626375678
+name: currencies
+description: Currencies root
+environment: {}
+environmentPropertyOrder: null
+metaSortKey: -1605626375678

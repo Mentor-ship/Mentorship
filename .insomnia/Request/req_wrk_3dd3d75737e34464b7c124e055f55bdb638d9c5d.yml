@@ -1,0 +1,29 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb638d9c5d
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbebdea362
+modified: 1605699584752
+created: 1605626375489
+url: "{{ base_url }}/currencies"
+name: Get all currencies from database
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "currencyName": "string",
+      "logo": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375489
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

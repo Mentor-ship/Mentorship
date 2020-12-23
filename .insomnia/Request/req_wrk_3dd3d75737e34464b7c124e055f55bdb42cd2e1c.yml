@@ -1,0 +1,28 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb42cd2e1c
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbc217d7ab
+modified: 1605699584654
+created: 1605626375420
+url: "{{ base_url }}/time_types"
+name: Get all time types from database
+description: ""
+method: GET
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "timeType": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375420
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

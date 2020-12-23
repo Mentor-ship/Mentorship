@@ -1,0 +1,21 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb747e7311
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb69c7c732
+modified: 1605699584694
+created: 1605626375436
+url: "{{ base_url }}/сharge_types/{{ :id }}"
+name: Get charge type by ID
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1605626375436
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,31 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbbe9838fd
+type: Request
+parentId: wrk_3dd3d75737e34464b7c124e055f55bdb
+modified: 1605699584451
+created: 1605626375361
+url: "{{ base_url }}/licenses/{{ :id }}"
+name: Updated
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "logo": "string",
+      "licenseDate": null,
+      "licenseName": "string",
+      "tags": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375361
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

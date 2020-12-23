@@ -1,0 +1,41 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb6e8838d6
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbc16175e3
+modified: 1605699584795
+created: 1605626375515
+url: "{{ base_url }}/vacancies/{{ :id }}"
+name: Updated vacancy
+description: ""
+method: PUT
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "title": "string",
+      "salary": 0,
+      "currencyId": "string",
+      "chargeType": "string",
+      "vacancyPicture": "string",
+      "categoryId": "string",
+      "dutyTypeId": "string",
+      "cityId": "string",
+      "companyId": "string",
+      "experince": 0,
+      "experienceType": "string",
+      "timeTypeId": "string",
+      "description": "string",
+      "requirements": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375515
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

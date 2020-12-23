@@ -1,0 +1,21 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbf8d0197a
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbc217d7ab
+modified: 1605699584601
+created: 1605626375412
+url: "{{ base_url }}/time_types/{{ :id }}"
+name: Get time type by ID
+description: ""
+method: GET
+body: {}
+parameters: []
+headers: []
+authentication: {}
+metaSortKey: -1605626375412
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

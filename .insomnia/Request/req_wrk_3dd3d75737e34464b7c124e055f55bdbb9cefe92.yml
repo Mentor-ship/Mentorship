@@ -1,0 +1,29 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdbb9cefe92
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdbebdea362
+modified: 1605699584756
+created: 1605626375496
+url: "{{ base_url }}/currencies"
+name: Add a new currency to the database
+description: ""
+method: POST
+body:
+  mimeType: application/json
+  text: |-
+    {
+      "currencyName": "string",
+      "logo": "string"
+    }
+parameters: []
+headers:
+  - name: Content-Type
+    value: application/json
+authentication: {}
+metaSortKey: -1605626375496
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

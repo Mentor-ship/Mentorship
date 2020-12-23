@@ -1,0 +1,33 @@
+_id: req_wrk_3dd3d75737e34464b7c124e055f55bdb906f2532
+type: Request
+parentId: fld_wrk_3dd3d75737e34464b7c124e055f55bdb0265a28b
+modified: 1605705927163
+created: 1605627742510
+url: "{{ base_url }}/languages/5fb19076305808052189224d"
+name: Updating language
+description: ""
+method: PUT
+body:
+  mimeType: multipart/form-data
+  params:
+    - name: logo
+      value: gfggfa
+      description: ""
+      id: pair_772bbdc52ace4ed495d81c9aea4adca9
+      type: file
+      multiline: null
+      fileName: C:\Users\Adil\Pictures\anonymous-mask.jpg
+parameters: []
+headers:
+  - name: Content-Type
+    value: multipart/form-data
+    id: pair_c42a41caac1d4669ab40721940a07eab
+authentication: {}
+metaSortKey: -1605627742510
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
